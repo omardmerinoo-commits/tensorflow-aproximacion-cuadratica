@@ -1,0 +1,20 @@
+# Requisitos del proyecto: Aproximación de y = x² con Red Neuronal
+# Instalación: pip install -r requirements.txt
+
+# Framework de Deep Learning
+tensorflow>=2.11.0
+
+# Computación numérica
+numpy>=1.23.0
+
+# Visualización de datos
+matplotlib>=3.6.0
+
+# Machine Learning utilities
+scikit-learn>=1.2.0
+
+# Testing (opcional, para desarrollo)
+pytest>=7.2.0
+
+# Serialización (incluido en Python estándar, pero se lista para claridad)
+# pickle - incluido en Python estándar
