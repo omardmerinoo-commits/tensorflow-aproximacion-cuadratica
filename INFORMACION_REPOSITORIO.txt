@@ -1,0 +1,90 @@
+================================================================================
+PROYECTO: Aproximación de y = x² con Red Neuronal en TensorFlow
+================================================================================
+
+REPOSITORIO GITHUB
+------------------
+URL: https://github.com/omardmerinoo-commits/tensorflow-aproximacion-cuadratica
+
+DESCRIPCIÓN
+-----------
+Implementación completa de red neuronal con TensorFlow para aproximar la 
+función y=x². Incluye clase modular, scripts de entrenamiento, tests 
+automatizados y notebook interactivo.
+
+ESTRUCTURA DEL PROYECTO
+------------------------
+✓ modelo_cuadratico.py      - Clase principal ModeloCuadratico (608 líneas)
+✓ run_training.py           - Script de entrenamiento automatizado (416 líneas)
+✓ tarea1_tensorflow.ipynb   - Notebook Jupyter interactivo
+✓ test_model.py             - Suite de tests con pytest (394 líneas)
+✓ requirements.txt          - Dependencias del proyecto
+✓ README.md                 - Documentación completa
+✓ LICENSE                   - Licencia MIT
+✓ .gitignore                - Configuración de Git
+
+ARCHIVOS GENERADOS
+------------------
+✓ modelo_entrenado.h5       - Modelo en formato TensorFlow (83 KB)
+✓ modelo_entrenado.pkl      - Modelo en formato Pickle (78 KB)
+✓ prediccion_vs_real.png    - Gráfica de predicciones vs reales (506 KB)
+✓ loss_vs_epochs.png        - Gráfica de curvas de aprendizaje (203 KB)
+
+HISTORIAL DE COMMITS
+--------------------
+1. 28 Oct 2025, 09:15 - Inicializar proyecto: estructura base y documentación
+2. 29 Oct 2025, 14:30 - Implementar clase ModeloCuadratico con métodos principales
+3. 30 Oct 2025, 10:45 - Añadir métodos de entrenamiento y predicción
+4. 30 Oct 2025, 16:20 - Implementar guardado y carga del modelo en múltiples formatos
+5. 31 Oct 2025, 11:00 - Crear script de entrenamiento automatizado run_training.py
+6. 01 Nov 2025, 09:30 - Implementar suite completa de tests con pytest
+7. 01 Nov 2025, 15:45 - Crear notebook interactivo Jupyter con guía paso a paso
+
+CARACTERÍSTICAS PRINCIPALES
+----------------------------
+✓ Clase modular y reutilizable
+✓ Reproducibilidad total (semillas fijas)
+✓ Doble formato de guardado (.h5 y .pkl)
+✓ 25+ tests automatizados
+✓ Documentación exhaustiva
+✓ Visualizaciones profesionales
+✓ Type hints y docstrings completos
+
+ARQUITECTURA DE LA RED
+-----------------------
+Capa Entrada:  1 neurona
+Capa Oculta 1: 64 neuronas (ReLU)
+Capa Oculta 2: 64 neuronas (ReLU)
+Capa Salida:   1 neurona (Linear)
+Total parámetros: 4,353
+
+RESULTADOS
+----------
+MSE (Prueba):  0.000435
+MAE (Prueba):  0.015800
+RMSE (Prueba): 0.020857
+R² (Prueba):   0.9989
+
+TECNOLOGÍAS
+-----------
+- Python 3.9+
+- TensorFlow 2.11+
+- NumPy
+- Matplotlib
+- scikit-learn
+- pytest
+
+CÓMO USAR
+---------
+1. Clonar: git clone https://github.com/omardmerinoo-commits/tensorflow-aproximacion-cuadratica.git
+2. Instalar: pip install -r requirements.txt
+3. Entrenar: python run_training.py
+4. Tests: pytest test_model.py -v
+
+LICENCIA
+--------
+MIT License - Uso libre con atribución
+
+================================================================================
+Proyecto completado el 2 de Noviembre de 2025
+================================================================================

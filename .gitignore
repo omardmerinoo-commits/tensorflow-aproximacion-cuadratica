@@ -23,7 +23,6 @@ mejor_modelo_temp.h5
 
 # Resultados y gráficas
 resultados_*/
-*.png
 *.jpg
 *.jpeg
 
@@ -59,3 +58,7 @@ coverage.xml
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# Permitir imágenes de resultados específicas
+!prediccion_vs_real.png
+!loss_vs_epochs.png
