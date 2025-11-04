@@ -5,7 +5,7 @@ Este módulo implementa la clase ModeloCuadratico que utiliza TensorFlow
 para construir, entrenar y evaluar una red neuronal simple que aprende
 la relación cuadrática y = x².
 
-Autor: Proyecto TensorFlow
+Proyecto TensorFlow
 Fecha: Noviembre 2025
 """
 
