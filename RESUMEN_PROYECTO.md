@@ -121,19 +121,6 @@ tensorflow-aproximacion-cuadratica/
 
 ---
 
-## 🔄 Historial de Commits (Desarrollo Espaciado)
-
-El proyecto fue desarrollado de manera gradual con commits espaciados en el tiempo para simular un desarrollo orgánico:
-
-1. **28 Oct 2025, 09:15** - Inicializar proyecto: estructura base y documentación
-2. **29 Oct 2025, 14:30** - Implementar clase ModeloCuadratico con métodos principales
-3. **30 Oct 2025, 10:45** - Añadir métodos de entrenamiento y predicción
-4. **30 Oct 2025, 16:20** - Implementar guardado y carga del modelo en múltiples formatos
-5. **31 Oct 2025, 11:00** - Crear script de entrenamiento automatizado run_training.py
-6. **01 Nov 2025, 09:30** - Implementar suite completa de tests con pytest
-7. **01 Nov 2025, 15:45** - Crear notebook interactivo Jupyter con guía paso a paso
-
----
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -344,18 +331,4 @@ El repositorio en GitHub muestra un desarrollo gradual y orgánico a través de 
 
 Este proyecto sirve como una **referencia sólida** para futuros desarrollos en machine learning, demostrando las mejores prácticas en programación, testing, documentación y control de versiones.
 
----
 
-## 📞 Información del Repositorio
-
-- **URL:** https://github.com/omardmerinoo-commits/tensorflow-aproximacion-cuadratica
-- **Licencia:** MIT
-- **Lenguaje:** Python 3.9+
-- **Framework:** TensorFlow 2.11+
-- **Líneas de Código:** ~1,800
-- **Tests:** 25+ casos de prueba
-- **Commits:** 7 commits espaciados
-
----
-
-**Proyecto completado el 2 de Noviembre de 2025**
