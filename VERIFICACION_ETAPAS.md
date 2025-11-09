@@ -176,37 +176,6 @@ pytest test_model.py -v
 
 ---
 
-## 🎯 Cumplimiento de Requisitos
-
-### Requisitos Obligatorios
-- [x] Clase `ModeloCuadratico` implementada
-- [x] Método `generar_datos()` con parámetros especificados
-- [x] Método `construir_modelo()` con arquitectura Sequential
-- [x] Método `entrenar()` con epochs y batch_size
-- [x] Método `predecir()` funcional
-- [x] División de datos 80/20
-- [x] Gráfica `prediccion_vs_real.png` generada
-- [x] Gráfica de curvas de aprendizaje
-- [x] Archivo README.md documentado
-
-### Entregables
-- [x] `modelo_cuadratico.py` (608 líneas)
-- [x] `tarea1_tensorflow.ipynb` (notebook completo)
-- [x] `prediccion_vs_real.png`
-- [x] `loss_vs_epochs.png`
-- [x] `README.md`
-
-### Extras Implementados
-- [x] Script `run_training.py` automatizado
-- [x] Suite de tests con pytest
-- [x] Guardado en múltiples formatos (.h5, .pkl)
-- [x] Documentación extensa (docstrings, type hints)
-- [x] Notebook interactivo con explicaciones
-- [x] Resumen técnico del proyecto
-- [x] Repositorio en GitHub organizado
-
----
-
 ## 🔍 Verificación de Calidad del Código
 
 ### Estándares Aplicados
@@ -246,7 +215,7 @@ El proyecto cumple con todos los requisitos especificados en las tareas 1 y 2, i
 - Tests automatizados con cobertura completa
 - Repositorio en GitHub con commits espaciados
 
-El código es profesional, reutilizable y está listo para ser presentado o adaptado a problemas más complejos.
+Código reutilizable y listo para ser presentado o adaptado a problemas más complejos.
 
 ---
 
