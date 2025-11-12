@@ -4,8 +4,7 @@
 
 ### Implementación
 - **Archivo**: `modelo_cuadratico.py`
-- **Líneas de código**: 608
-- **Clase principal**: `ModeloCuadratico`
+
 
 ### Métodos implementados
 1. `__init__()` - Constructor de la clase
@@ -219,5 +218,4 @@ Código reutilizable y listo para ser presentado o adaptado a problemas más com
 
 ---
 
-**Fecha de verificación**: 2 de noviembre de 2025  
-**Verificado por**: Equipo de desarrollo del proyecto
+**Fecha de verificación**: noviembre de 2025  
