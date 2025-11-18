@@ -390,20 +390,21 @@ class ModeloCuadratico:
     
     def guardar_modelo(
         self,
-        path_tf: str = "modelo_entrenado.h5",
+        path_tf: str = "modelo_entrenado.keras",
         path_pkl: str = "modelo_entrenado.pkl"
     ) -> None:
         """
-        Guarda el modelo entrenado en formatos TensorFlow (.h5) y pickle (.pkl).
+        Guarda el modelo entrenado en formatos Keras nativo (.keras) y pickle (.pkl).
         
-        El formato .h5 es nativo de Keras y preserva la arquitectura completa,
-        pesos y configuración del optimizador. El formato .pkl permite
-        serialización completa del objeto para compatibilidad con otras herramientas.
+        El formato .keras es el formato nativo recomendado por Keras 3 y preserva
+        la arquitectura completa, pesos y configuración del optimizador sin
+        problemas de compatibilidad. El formato .pkl permite serialización completa
+        del objeto para compatibilidad con otras herramientas.
         
         Parameters
         ----------
         path_tf : str, optional
-            Ruta para guardar el modelo en formato TensorFlow (default: "modelo_entrenado.h5").
+            Ruta para guardar el modelo en formato Keras nativo (default: "modelo_entrenado.keras").
         path_pkl : str, optional
             Ruta para guardar el modelo en formato pickle (default: "modelo_entrenado.pkl").
             
@@ -422,16 +423,16 @@ class ModeloCuadratico:
         --------
         >>> modelo = ModeloCuadratico()
         >>> # ... entrenar modelo ...
-        >>> modelo.guardar_modelo("mi_modelo.h5", "mi_modelo.pkl")
+        >>> modelo.guardar_modelo("mi_modelo.keras", "mi_modelo.pkl")
         """
         if self.modelo is None:
             raise RuntimeError("No hay modelo para guardar. Debe construir y entrenar el modelo primero.")
         
         try:
-            # Guardar en formato TensorFlow (.h5)
+            # Guardar en formato Keras nativo (.keras) - RECOMENDADO
             self.modelo.save(path_tf)
-            size_h5 = os.path.getsize(path_tf) / 1024  # KB
-            print(f"✓ Modelo guardado en formato TensorFlow: {path_tf} ({size_h5:.2f} KB)")
+            size_keras = os.path.getsize(path_tf) / 1024  # KB
+            print(f"✓ Modelo guardado en formato Keras nativo: {path_tf} ({size_keras:.2f} KB)")
             
             # Guardar en formato pickle (.pkl)
             # Serializamos un diccionario con el modelo y metadatos
@@ -459,15 +460,15 @@ class ModeloCuadratico:
         path_pkl: Optional[str] = None
     ) -> None:
         """
-        Carga un modelo previamente guardado desde archivo .h5 o .pkl.
+        Carga un modelo previamente guardado desde archivo .keras o .pkl.
         
         Permite cargar el modelo desde cualquiera de los dos formatos.
-        Si se proporcionan ambos, se prioriza el formato TensorFlow (.h5).
+        Si se proporcionan ambos, se prioriza el formato Keras nativo (.keras).
         
         Parameters
         ----------
         path_tf : str or None, optional
-            Ruta del archivo .h5 a cargar (default: None).
+            Ruta del archivo .keras a cargar (default: None).
         path_pkl : str or None, optional
             Ruta del archivo .pkl a cargar (default: None).
             
@@ -486,7 +487,7 @@ class ModeloCuadratico:
         Examples
         --------
         >>> modelo = ModeloCuadratico()
-        >>> modelo.cargar_modelo(path_tf="modelo_entrenado.h5")
+        >>> modelo.cargar_modelo(path_tf="modelo_entrenado.keras")
         >>> # O alternativamente:
         >>> modelo.cargar_modelo(path_pkl="modelo_entrenado.pkl")
         """
@@ -494,16 +495,16 @@ class ModeloCuadratico:
             raise ValueError("Debe proporcionar al menos una ruta (path_tf o path_pkl).")
         
         try:
-            # Priorizar carga desde TensorFlow si está disponible
+            # Priorizar carga desde Keras nativo si está disponible
             if path_tf is not None:
                 if not os.path.exists(path_tf):
                     raise ValueError(f"El archivo no existe: {path_tf}")
                 
                 self.modelo = keras.models.load_model(path_tf)
-                print(f"✓ Modelo cargado desde formato TensorFlow: {path_tf}")
+                print(f"✓ Modelo cargado desde formato Keras nativo: {path_tf}")
                 print(f"  - Parámetros: {self.modelo.count_params():,}")
                 
-            # Cargar desde pickle si no hay .h5 o como alternativa
+            # Cargar desde pickle si no hay .keras o como alternativa
             elif path_pkl is not None:
                 if not os.path.exists(path_pkl):
                     raise ValueError(f"El archivo no existe: {path_pkl}")

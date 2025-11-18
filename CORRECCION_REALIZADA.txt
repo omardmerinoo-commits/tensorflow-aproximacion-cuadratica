@@ -1,0 +1,42 @@
+RESUMEN DE CORRECCIONES - PROYECTO TENSORFLOW APROXIMACIÓN CUADRÁTICA
+=====================================================================
+
+PROBLEMA ORIGINAL:
+- Error al cargar el modelo: ValueError: Could not deserialize 'keras.metrics.mse'
+- Causa: Incompatibilidad de formato HDF5 (.h5) con Keras 3
+
+SOLUCIÓN IMPLEMENTADA:
+1. Cambiar formato de guardado de .h5 a .keras (nativo de Keras 3)
+   - Archivo: modelo_cuadratico.py
+   - Métodos actualizados: guardar_modelo(), cargar_modelo()
+
+2. Actualizar rutas en el script de entrenamiento
+   - Archivo: run_training_fixed.py
+   - Cambio: path_h5 → path_keras
+
+RESULTADO FINAL:
+✓ Entrenamiento completado exitosamente
+✓ Modelo guardado sin errores en formato .keras
+✓ Archivo: modelo_entrenado.keras (75.38 KB)
+✓ Archivo: modelo_entrenado.pkl (77.58 KB) - Respaldo
+✓ Gráfica: prediccion_vs_real.png (476.96 KB)
+✓ Gráfica: loss_vs_epochs.png (160.16 KB)
+
+ARCHIVOS GENERADOS:
+- modelo_entrenado.keras ......... Modelo en formato nativo Keras 3
+- modelo_entrenado.pkl ........... Modelo en formato Pickle
+- prediccion_vs_real.png ......... Comparación de predicciones vs reales
+- loss_vs_epochs.png ............ Curvas de aprendizaje
+- demo_modelo_corregido.py ....... Script de demostración
+- verificar_modelo.py ............ Script de verificación
+
+USO CORRECTO:
+python
+from modelo_cuadratico import ModeloCuadratico
+import numpy as np
+
+modelo = ModeloCuadratico()
+modelo.cargar_modelo(path_tf="modelo_entrenado.keras")
+x_test = np.array([[0.5], [1.0]])
+predicciones = modelo.predecir(x_test)
+print(predicciones)
