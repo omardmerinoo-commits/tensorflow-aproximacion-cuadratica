@@ -1,0 +1,591 @@
+{
+  "timestamp": "2025-11-18T10:01:31.858890",
+  "workspace": "C:\\Users\\Usuario\\Desktop\\tensorflow-aproximacion-cuadratica",
+  "proyectos": 12,
+  "estadisticas": {
+    "total_archivos": 38,
+    "total_lineas": 7122,
+    "total_clases": 61,
+    "total_funciones": 40,
+    "archivos_readme": 14,
+    "archivos_test": 13
+  },
+  "proyectos_detalle": [
+    {
+      "project": "proyecto10_qutip_basico",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto10_qutip_basico\\run_qutip_basico.py",
+          "lines": 114,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 4,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 3.701171875
+        },
+        {
+          "path": "proyecto10_qutip_basico\\simulador_qutip_basico.py",
+          "lines": 192,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 4,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 5.5986328125
+        },
+        {
+          "path": "proyecto10_qutip_basico\\test_qutip_basico.py",
+          "lines": 50,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 4,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 1.4384765625
+        }
+      ],
+      "total_lines": 356,
+      "total_classes": 2,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto11_decoherencia",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto11_decoherencia\\run_decoherencia.py",
+          "lines": 125,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 5,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 4.234375
+        },
+        {
+          "path": "proyecto11_decoherencia\\simulador_decoherencia.py",
+          "lines": 154,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 4,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 4.7236328125
+        },
+        {
+          "path": "proyecto11_decoherencia\\test_decoherencia.py",
+          "lines": 35,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 4,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 0.9736328125
+        }
+      ],
+      "total_lines": 314,
+      "total_classes": 2,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto12_qubits_entrelazados",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto12_qubits_entrelazados\\run_entrelazados.py",
+          "lines": 139,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 6,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 5.1201171875
+        },
+        {
+          "path": "proyecto12_qubits_entrelazados\\simulador_qubits_entrelazados.py",
+          "lines": 209,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 4,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 5.833984375
+        },
+        {
+          "path": "proyecto12_qubits_entrelazados\\test_entrelazados.py",
+          "lines": 42,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 4,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 1.1640625
+        }
+      ],
+      "total_lines": 390,
+      "total_classes": 2,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto1_oscilaciones",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto1_oscilaciones\\oscilaciones_amortiguadas.py",
+          "lines": 389,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 13,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 13.9189453125
+        },
+        {
+          "path": "proyecto1_oscilaciones\\run_training.py",
+          "lines": 237,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 7,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 8.4267578125
+        },
+        {
+          "path": "proyecto1_oscilaciones\\test_oscilaciones.py",
+          "lines": 316,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 5,
+          "classes": 8,
+          "functions": 0,
+          "size_kb": 11.2646484375
+        }
+      ],
+      "total_lines": 942,
+      "total_classes": 9,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto2_web",
+      "num_files": 4,
+      "files": [
+        {
+          "path": "proyecto2_web\\app.py",
+          "lines": 426,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 9,
+          "classes": 1,
+          "functions": 16,
+          "size_kb": 13.5107421875
+        },
+        {
+          "path": "proyecto2_web\\cliente_cli.py",
+          "lines": 245,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 5,
+          "classes": 1,
+          "functions": 8,
+          "size_kb": 8.05859375
+        },
+        {
+          "path": "proyecto2_web\\modelos_bd.py",
+          "lines": 351,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 7,
+          "classes": 4,
+          "functions": 0,
+          "size_kb": 12.654296875
+        },
+        {
+          "path": "proyecto2_web\\test_app.py",
+          "lines": 230,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 6,
+          "classes": 4,
+          "functions": 1,
+          "size_kb": 8.2802734375
+        }
+      ],
+      "total_lines": 1252,
+      "total_classes": 10,
+      "total_functions": 25,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 4,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto3_qubit",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto3_qubit\\run_simulations.py",
+          "lines": 210,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 5,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 7.697265625
+        },
+        {
+          "path": "proyecto3_qubit\\simulador_qubit.py",
+          "lines": 405,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 9,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 14.150390625
+        },
+        {
+          "path": "proyecto3_qubit\\test_simulador.py",
+          "lines": 239,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 3,
+          "classes": 7,
+          "functions": 0,
+          "size_kb": 8.1064453125
+        }
+      ],
+      "total_lines": 854,
+      "total_classes": 9,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto4_estadistica",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto4_estadistica\\analizador_estadistico.py",
+          "lines": 476,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 13,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 17.158203125
+        },
+        {
+          "path": "proyecto4_estadistica\\run_analysis.py",
+          "lines": 168,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 5,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 6.736328125
+        },
+        {
+          "path": "proyecto4_estadistica\\test_analizador.py",
+          "lines": 235,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 3,
+          "classes": 6,
+          "functions": 0,
+          "size_kb": 8.1123046875
+        }
+      ],
+      "total_lines": 879,
+      "total_classes": 7,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto5_clasificacion_fases",
+      "num_files": 4,
+      "files": [
+        {
+          "path": "proyecto5_clasificacion_fases\\generador_datos_fases.py",
+          "lines": 170,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 2,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 5.845703125
+        },
+        {
+          "path": "proyecto5_clasificacion_fases\\modelo_clasificador_fases.py",
+          "lines": 241,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 8,
+          "classes": 1,
+          "functions": 0,
+          "size_kb": 7.0859375
+        },
+        {
+          "path": "proyecto5_clasificacion_fases\\run_fases.py",
+          "lines": 151,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 8,
+          "classes": 0,
+          "functions": 3,
+          "size_kb": 5.0048828125
+        },
+        {
+          "path": "proyecto5_clasificacion_fases\\test_fases.py",
+          "lines": 172,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 4,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 6.181640625
+        }
+      ],
+      "total_lines": 734,
+      "total_classes": 4,
+      "total_functions": 3,
+      "files_with_type_hints": 2,
+      "files_with_docstrings": 4,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto6_funciones_nolineales",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto6_funciones_nolineales\\aproximador_funciones.py",
+          "lines": 251,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 7,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 7.3720703125
+        },
+        {
+          "path": "proyecto6_funciones_nolineales\\run_funciones.py",
+          "lines": 152,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 5,
+          "classes": 0,
+          "functions": 3,
+          "size_kb": 5.0634765625
+        },
+        {
+          "path": "proyecto6_funciones_nolineales\\test_funciones.py",
+          "lines": 114,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 3,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 3.7705078125
+        }
+      ],
+      "total_lines": 517,
+      "total_classes": 4,
+      "total_functions": 3,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto7_materiales",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto7_materiales\\predictor_materiales.py",
+          "lines": 143,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 7,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 4.9658203125
+        },
+        {
+          "path": "proyecto7_materiales\\run_materiales.py",
+          "lines": 72,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 6,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 2.1904296875
+        },
+        {
+          "path": "proyecto7_materiales\\test_materiales.py",
+          "lines": 46,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 3,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 1.259765625
+        }
+      ],
+      "total_lines": 261,
+      "total_classes": 4,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto8_clasificacion_musica",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto8_clasificacion_musica\\clasificador_musica.py",
+          "lines": 197,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 8,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 6.5244140625
+        },
+        {
+          "path": "proyecto8_clasificacion_musica\\run_musica.py",
+          "lines": 82,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 5,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 2.560546875
+        },
+        {
+          "path": "proyecto8_clasificacion_musica\\test_musica.py",
+          "lines": 42,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 3,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 1.2236328125
+        }
+      ],
+      "total_lines": 321,
+      "total_classes": 4,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    },
+    {
+      "project": "proyecto9_vision_computacional",
+      "num_files": 3,
+      "files": [
+        {
+          "path": "proyecto9_vision_computacional\\contador_objetos.py",
+          "lines": 191,
+          "has_type_hints": true,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 8,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 6.3818359375
+        },
+        {
+          "path": "proyecto9_vision_computacional\\run_vision.py",
+          "lines": 69,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": false,
+          "imports": 4,
+          "classes": 0,
+          "functions": 1,
+          "size_kb": 2.1181640625
+        },
+        {
+          "path": "proyecto9_vision_computacional\\test_vision.py",
+          "lines": 42,
+          "has_type_hints": false,
+          "has_docstrings": true,
+          "has_tests": true,
+          "imports": 3,
+          "classes": 2,
+          "functions": 0,
+          "size_kb": 1.1962890625
+        }
+      ],
+      "total_lines": 302,
+      "total_classes": 4,
+      "total_functions": 1,
+      "files_with_type_hints": 1,
+      "files_with_docstrings": 3,
+      "test_files": 1
+    }
+  ],
+  "librerías": {
+    "principales": {
+      "numpy": 42,
+      "tensorflow": 11,
+      "matplotlib": 13,
+      "sklearn": 9,
+      "qutip": 8,
+      "pandas": 2,
+      "scipy": 1,
+      "librosa": 1,
+      "cv2": 1
+    },
+    "total_únicas": 50
+  }
+}
