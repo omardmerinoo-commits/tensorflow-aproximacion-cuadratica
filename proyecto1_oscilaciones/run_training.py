@@ -25,7 +25,7 @@ def main():
     """Ejecuta el pipeline completo de entrenamiento."""
     
     print("=" * 70)
-    print("PROYECTO 1: IA PARA OSCILACIONES AMORTIGUADAS")
+    print("PROYECTO 1: Red neuronal para Oscilaciones Amortiguadas")
     print("=" * 70)
     
     # ==================== GENERACIÓN DE DATOS ====================

@@ -16,7 +16,7 @@
     },
     "proyecto1_oscilaciones": {
       "name": "Oscilaciones Amortiguadas",
-      "description": "IA para modelar oscilaciones mecánicas",
+      "description": "Modelo de aprendizaje profundo para modelar oscilaciones mecánicas",
       "type": "deep_learning",
       "dependencies": ["tensorflow", "keras", "scikit-learn"],
       "tests": 25,

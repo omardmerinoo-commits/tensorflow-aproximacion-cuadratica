@@ -2,7 +2,7 @@
 
 Repositorio profesional de Machine Learning y computación científica con **5 proyectos independientes**:
 
-1. **IA para Oscilaciones Amortiguadas** - Redes neuronales profundas
+1. **Modelo de aprendizaje profundo para Oscilaciones Amortiguadas** - Redes neuronales profundas
 2. **Web de Gestión de Experimentos** - API REST + Base de datos
 3. **Simulador Cuántico** - Dinámicas de qubits
 4. **Análisis Estadístico** - Suite profesional de estadística
@@ -12,7 +12,7 @@ Repositorio profesional de Machine Learning y computación científica con **5 p
 
 ```
 tensorflow-aproximacion-cuadratica/
-├── proyecto1_oscilaciones/          # IA Oscilaciones Amortiguadas
+├── proyecto1_oscilaciones/          # Oscilaciones Amortiguadas (modelo)
 │   ├── oscilaciones_amortiguadas.py # Clase principal
 │   ├── run_training.py              # Entrenamiento
 │   ├── test_oscilaciones.py         # 25+ tests
@@ -96,7 +96,7 @@ pytest test_analizador.py -v
 
 ## Características Destacadas
 
-### Proyecto 1: IA para Oscilaciones
+### Proyecto 1: Oscilaciones Amortiguadas (Modelo de aprendizaje profundo)
 - ✅ 50,000+ datos sintéticos generados
 - ✅ Red neuronal profunda con 3 capas
 - ✅ Validación cruzada 5-fold
@@ -272,8 +272,7 @@ Para preguntas o sugerencias:
 
 ## Changelog
 
-### v2.0.0 (2025-11-18)
-- ✅ Proyecto 1: IA Oscilaciones (1000+ líneas, 25+ tests)
+- ✅ Proyecto 1: Oscilaciones Amortiguadas (1000+ líneas, 25+ tests)
 - ✅ Proyecto 2: Web API (500+ líneas, 15+ tests)
 - ✅ Proyecto 3: Simulador Cuántico (800+ líneas, 30+ tests)
 - ✅ Proyecto 4: Análisis Estadístico (900+ líneas, 35+ tests)

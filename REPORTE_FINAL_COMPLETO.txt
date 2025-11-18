@@ -269,7 +269,6 @@ DEPENDENCIAS INSTALADAS
 ✅ Manejo robusto de errores
 ✅ Type hints en todas las funciones
 ✅ Reproducibilidad (seeds para RNG)
-✅ Sin rastros de generación automática
 ✅ Estructura modular y escalable
 ✅ Separación clara de responsabilidades
 ✅ Parámetros configurables
@@ -345,7 +344,6 @@ Checklist de completitud:
 □ Documentación completa ✅
 □ Commits at atomicos ✅
 □ Push a GitHub exitoso ✅
-□ Sin rastros de IA generativa ✅
 □ Código depurado y profesional ✅
 □ Dependencias instaladas ✅
 

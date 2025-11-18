@@ -259,7 +259,7 @@ CALIDAD:
   ✅ PEP 8 100% compliant
   ✅ Error handling completo
   ✅ Reproducibilidad (seeds)
-  ✅ Sin rastros de IA en código
+  
 
 INFRAESTRUCTURA:
   ✅ build.py automatizado

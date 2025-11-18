@@ -8,7 +8,7 @@ Colección de 12 proyectos profesionales e implementados completamente en Python
 
 | # | Proyecto | Descripción | Líneas | Tests |
 |---|----------|-------------|--------|-------|
-| 1 | Oscilaciones Amortiguadas | IA para modelar oscilaciones mecánicas | 1000+ | 25+ |
+| 1 | Oscilaciones Amortiguadas | Modelo de aprendizaje profundo para modelar oscilaciones mecánicas | 1000+ | 25+ |
 | 5 | Clasificación de Fases | Red neuronal para clasificar fases de la materia | 500+ | 15+ |
 | 6 | Funciones No Lineales | Aproximador de funciones complejas | 600+ | 12+ |
 | 7 | Propiedades de Materiales | Predicción de propiedades físicas | 400+ | 10+ |
@@ -168,7 +168,7 @@ pytest proyecto5_clasificacion_fases/test_fases.py::TestModeloClasificador::test
 ✅ Manejo de errores
 ✅ Type hints
 ✅ Reproducibilidad (seeds)
-✅ Sin rastros de generación automática
+✅ Sin referencias a herramientas de generación automática
 ✅ Estructura modular
 ✅ Separación de responsabilidades
 ✅ Parámetros configurables
