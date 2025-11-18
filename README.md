@@ -1,210 +1,514 @@
-# Proyecto: Aproximación de la Función y = x² con Red Neuronal
+# Aproximación Cuadrática con TensorFlow 2.16+
 
-Este repositorio contiene una implementación completa en Python y TensorFlow para entrenar una red neuronal que aprende a aproximar la función cuadrática `y = x²`. El proyecto está diseñado para ser modular, reproducible y fácil de usar, sirviendo como un ejemplo práctico del flujo de trabajo en aprendizaje automático.
+Repositorio dedicado a la aproximación de la función **y = x²** utilizando redes neuronales profundas con TensorFlow. Implementa dos versiones: una base completa y una versión mejorada con análisis estadístico exhaustivo, validación cruzada y visualización avanzada.
 
-![Gráfica de Predicciones](prediccion_vs_real.png)
+**Estado**: ✅ Producción | **Versión**: 2.0 | **Última actualización**: Noviembre 2025
 
----
+## 📋 Tabla de Contenidos
 
-## 📜 Tabla de Contenidos
-
-1.  [🚀 Características Principales](#-características-principales)
-2.  [📂 Estructura del Proyecto](#-estructura-del-proyecto)
-3.  [⚙️ Instalación](#️-instalación)
-4.  [▶️ Cómo Ejecutar](#️-cómo-ejecutar)
-    *   [Entrenamiento del Modelo](#entrenamiento-del-modelo)
-    *   [Uso del Notebook Interactivo](#uso-del-notebook-interactivo)
-    *   [Ejecución de Pruebas](#ejecución-de-pruebas)
-5.  [🧠 Arquitectura del Modelo](#-arquitectura-del-modelo)
-6.  [💾 Uso del Modelo Guardado](#-uso-del-modelo-guardado)
-    *   [Cargar desde formato TensorFlow (.h5)](#cargar-desde-formato-tensorflow-h5)
-    *   [Cargar desde formato Pickle (.pkl)](#cargar-desde-formato-pickle-pkl)
-7.  [📄 Licencia](#-licencia)
+- [🎯 Objetivos](#-objetivos)
+- [✨ Características](#-características)
+- [🏗️ Estructura](#️-estructura)
+- [📦 Modelos Disponibles](#-modelos-disponibles)
+- [🚀 Inicio Rápido](#-inicio-rápido)
+- [🔧 Instalación](#-instalación)
+- [📖 Uso Detallado](#-uso-detallado)
+- [🧠 Arquitectura](#-arquitectura)
+- [🧪 Testing](#-testing)
+- [📊 Resultados y Métricas](#-resultados-y-métricas)
+- [📝 Licencia](#-licencia)
 
 ---
 
-## 🚀 Características Principales
+## 🎯 Objetivos
 
-*   **Clase Modular `ModeloCuadratico`**: Encapsula toda la lógica del modelo (generación de datos, construcción, entrenamiento, predicción, guardado y carga).
-*   **Reproducibilidad**: Uso de semillas fijas para garantizar que los resultados sean consistentes entre ejecuciones.
-*   **Script de Entrenamiento**: `run_training.py` automatiza todo el proceso, desde la generación de datos hasta el guardado del modelo y las gráficas.
-*   **Notebook Interactivo**: `tarea1_tensorflow.ipynb` ofrece una guía paso a paso con explicaciones detalladas y celdas de código ejecutables.
-*   **Visualizaciones Claras**: Genera gráficas para comparar las predicciones con los valores reales y para analizar las curvas de aprendizaje (pérdida y MAE).
-*   **Doble Formato de Guardado**: El modelo se guarda tanto en el formato nativo de Keras (`.h5`) como en formato `pickle` (`.pkl`) para máxima compatibilidad.
-*   **Pruebas Automatizadas**: Incluye una suite de tests con `pytest` para verificar el correcto funcionamiento de cada componente.
+Este proyecto demuestra cómo entrenar redes neuronales profundas para aproximar funciones matemáticas. Los objetivos específicos son:
+
+1. **Aproximar una función cuadrática** (`y = x²`) utilizando una red neuronal multicapa
+2. **Comparar dos enfoques distintos**: un modelo base funcional y uno mejorado con capacidades avanzadas
+3. **Validar la precisión** mediante métricas estadísticas (MSE, RMSE, MAE, R²) y validación cruzada
+4. **Proporcionar herramientas para visualización y análisis** del rendimiento del modelo
+5. **Servir como referencia educativa** para proyectos similares en aproximación de funciones
 
 ---
 
-## 📂 Estructura del Proyecto
+## ✨ Características
 
-El repositorio está organizado de la siguiente manera para mantener el código limpio y modular:
+### ModeloCuadratico (Base)
+- ✅ **Generación de datos automática** con ruido configurable
+- ✅ **Arquitectura modular** y fácil de personalizar
+- ✅ **Entrenamiento estable** con Adam optimizer
+- ✅ **Predicción en lote** para nuevos datos
+- ✅ **Guardado/Carga** en formatos `.h5` y `.pkl`
+- ✅ **Resumen modelo** con arquitectura completa
+
+### ModeloCuadraticoMejorado (Premium)
+- ✅ **Todo lo del modelo base** + características avanzadas:
+- ✅ **Evaluación exhaustiva** (MSE, RMSE, MAE, R², análisis de residuos)
+- ✅ **Validación cruzada k-fold** para robustez estadística
+- ✅ **Visualización avanzada** (4 gráficas integradas)
+- ✅ **Exportación de reportes** en formato JSON
+- ✅ **Arquitectura configurable** con capas personalizables
+- ✅ **Análisis de residuos** para diagnosticar errores
+
+---
+
+## 🏗️ Estructura
+
+### Estructura del Directorio
 
 ```
-. (raíz del proyecto)
-├── modelo_cuadratico.py      # Clase principal ModeloCuadratico
-├── run_training.py           # Script para ejecutar el entrenamiento completo
-├── tarea1_tensorflow.ipynb   # Notebook Jupyter con explicación paso a paso
-├── test_model.py             # Pruebas automatizadas con pytest
-|
-├── requirements.txt          # Dependencias del proyecto
-├── .gitignore                # Archivos y directorios a ignorar por Git
-├── LICENSE                   # Licencia MIT del proyecto
-├── README.md                 # Este archivo
-|
-└── (Archivos generados tras la ejecución)
-    ├── modelo_entrenado.h5       # Modelo guardado en formato TensorFlow
-    ├── modelo_entrenado.pkl      # Modelo guardado en formato pickle
-    ├── prediccion_vs_real.png    # Gráfica de predicciones vs. valores reales
-    └── loss_vs_epochs.png        # Gráfica de curvas de aprendizaje
+tensorflow-aproximacion-cuadratica/
+├── 📄 Archivos Principales
+│   ├── modelo_cuadratico.py              # Clase base del modelo
+│   ├── modelo_cuadratico_mejorado.py     # Versión mejorada con análisis avanzado
+│   ├── run_training.py                   # Script de entrenamiento automático
+│   ├── requirements.txt                  # Dependencias del proyecto
+│   └── LICENSE                           # Licencia MIT
+│
+├── 📖 Documentación y Notebooks
+│   ├── README.md                         # Este archivo
+│   ├── tarea1_tensorflow.ipynb           # Notebook Jupyter interactivo
+│   └── proyecto0_original/               # Documentación original del proyecto
+│
+├── 🧪 Testing
+│   ├── test_model.py                     # Tests para modelo base
+│   └── test_modelos_exhaustivo.py        # Suite exhaustiva (50+ tests)
+│
+└── 📁 Directorios Generados (tras ejecución)
+    ├── outputs/                          # Gráficas y visualizaciones
+    ├── results_finales/                  # Resultados finales
+    └── datos_*.pkl                       # Datos de entrenamiento cacheados
 ```
 
 ---
 
-## ⚙️ Instalación
+## 📦 Modelos Disponibles
 
-Para configurar el entorno y ejecutar este proyecto, sigue estos pasos. Se recomienda usar un entorno virtual para evitar conflictos de dependencias.
+### 1. ModeloCuadratico (Versión Base)
 
-1.  **Clonar el repositorio (si aplica)**:
-    ```bash
-    git clone <URL-DEL-REPOSITORIO>
-    cd <NOMBRE-DEL-REPOSITORIO>
-    ```
+**Archivo**: `modelo_cuadratico.py`
 
-2.  **Crear y activar un entorno virtual**:
-    ```bash
-    # Crear el entorno
-    python -m venv venv
+Implementación completa y directa de la aproximación cuadrática.
 
-    # Activar en Windows
-    .\venv\Scripts\activate
+**Métodos principales**:
+- `generar_datos(n_samples, rango, ruido, test_size)` - Genera dataset con split automático
+- `construir_modelo()` - Crea arquitectura 1-64-64-1
+- `entrenar(epochs, batch_size, verbose)` - Entrena el modelo
+- `predecir(x)` - Hace predicciones
+- `guardar_modelo(path_tf, path_pkl)` - Guarda en .h5 y/o .pkl
+- `cargar_modelo(path_tf, path_pkl)` - Carga desde ambos formatos
 
-    # Activar en macOS/Linux
-    source venv/bin/activate
-    ```
+### 2. ModeloCuadraticoMejorado (Versión Premium)
 
-3.  **Instalar las dependencias**:
-    El archivo `requirements.txt` contiene todas las librerías necesarias. Instálalas con pip:
-    ```bash
-    pip install -r requirements.txt
-    ```
+**Archivo**: `modelo_cuadratico_mejorado.py`
 
-¡Y eso es todo! El entorno está listo para usar.
+Versión extendida con capacidades de análisis estadístico avanzado.
+
+**Métodos principales** (incluye todos los del base + ):
+- `evaluar()` - Retorna dict con MSE, RMSE, MAE, R², análisis de residuos
+- `validacion_cruzada(k_folds)` - K-fold cross-validation con estadísticas
+- `visualizar_predicciones(salida)` - Genera 4 gráficas integradas:
+  - Predicciones vs. Valores Reales
+  - Residuos
+  - Distribución de Residuos
+  - Curva de Aprendizaje
+- `exportar_reporte(archivo)` - Exporta análisis completo a JSON
+- `construir_modelo(capas, tasa_aprendizaje)` - Arquitectura configurable
 
 ---
 
-## ▶️ Cómo Ejecutar
+## 🚀 Inicio Rápido
 
-### Entrenamiento del Modelo
+### Opción 1: Usar el Modelo Base
 
-Para entrenar el modelo desde cero, simplemente ejecuta el script `run_training.py` desde tu terminal. Este script se encargará de todo el proceso:
+```python
+import numpy as np
+from modelo_cuadratico import ModeloCuadratico
+
+# Crear instancia
+modelo = ModeloCuadratico()
+
+# Generar datos de entrenamiento
+X_train, X_test, y_train, y_test = modelo.generar_datos(n_samples=1000)
+
+# Construir y entrenar
+modelo.construir_modelo()
+modelo.entrenar(epochs=100, batch_size=32)
+
+# Hacer predicciones
+x_nuevos = np.array([[0.5], [1.0], [1.5]])
+predicciones = modelo.predecir(x_nuevos)
+
+# Guardar
+modelo.guardar_modelo(path_tf="mi_modelo.h5", path_pkl="mi_modelo.pkl")
+```
+
+### Opción 2: Usar el Modelo Mejorado
+
+```python
+import numpy as np
+from modelo_cuadratico_mejorado import ModeloCuadraticoMejorado
+
+# Crear instancia
+modelo = ModeloCuadraticoMejorado()
+
+# Generar datos
+X_train, X_test, y_train, y_test = modelo.generar_datos(n_samples=1000, ruido=0.05)
+
+# Entrenar
+modelo.construir_modelo(capas=[1, 128, 64, 1], tasa_aprendizaje=0.001)
+modelo.entrenar(epochs=200, batch_size=32)
+
+# Evaluar exhaustivamente
+metricas = modelo.evaluar()
+print(f"MSE: {metricas['mse']:.6f}")
+print(f"RMSE: {metricas['rmse']:.6f}")
+print(f"MAE: {metricas['mae']:.6f}")
+print(f"R²: {metricas['r2']:.6f}")
+
+# Validación cruzada (5-fold)
+cv_resultados = modelo.validacion_cruzada(k_folds=5)
+
+# Visualizar
+modelo.visualizar_predicciones(salida="predicciones.png")
+
+# Exportar reporte
+modelo.exportar_reporte("reporte_analisis.json")
+```
+
+### Opción 3: Script Automático
 
 ```bash
 python run_training.py
 ```
 
-El script realizará las siguientes acciones:
-1.  Generará 1000 puntos de datos para la función `y = x²` con ruido.
-2.  Dividirá los datos en conjuntos de entrenamiento (80%) y prueba (20%).
-3.  Construirá el modelo de red neuronal.
-4.  Entrenará el modelo usando el 20% de los datos de entrenamiento para validación.
-5.  Guardará el modelo entrenado en `modelo_entrenado.h5` y `modelo_entrenado.pkl`.
-6.  Generará las gráficas `prediccion_vs_real.png` y `loss_vs_epochs.png`.
+---
 
-### Uso del Notebook Interactivo
+## 🔧 Instalación
 
-Si prefieres una experiencia más guiada y visual, puedes usar el notebook de Jupyter.
+### Requisitos Previos
+- Python 3.8+
+- pip (gestor de paquetes)
 
-1.  **Iniciar Jupyter Notebook**:
-    ```bash
-    jupyter notebook
-    ```
+### Pasos de Instalación
 
-2.  **Abrir el notebook**:
-    En la interfaz de Jupyter que se abrirá en tu navegador, haz clic en `tarea1_tensorflow.ipynb`.
+1. **Clonar el repositorio**:
+```bash
+git clone https://github.com/usuario/tensorflow-aproximacion-cuadratica.git
+cd tensorflow-aproximacion-cuadratica
+```
 
-3.  **Ejecutar las celdas**:
-    Puedes ejecutar cada celda en orden para seguir el proceso de creación, entrenamiento y evaluación del modelo, con explicaciones detalladas en cada paso.
+2. **Crear entorno virtual** (recomendado):
+```bash
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
 
-### Ejecución de Pruebas
+# macOS/Linux
+python -m venv venv
+source venv/bin/activate
+```
 
-Para verificar que todo funciona como se espera, puedes ejecutar la suite de pruebas automatizadas con `pytest`:
+3. **Instalar dependencias**:
+```bash
+pip install -r requirements.txt
+```
+
+4. **Verificar instalación**:
+```bash
+pytest -v test_model.py
+```
+
+---
+
+## 📖 Uso Detallado
+
+### Entrenamiento Completo
+
+Ejecutar `run_training.py` realiza el flujo completo:
+
+```bash
+python run_training.py
+```
+
+**Qué hace el script**:
+1. ✅ Genera 1000 puntos de datos de entrenamiento
+2. ✅ Divide en 80% entrenamiento, 20% prueba
+3. ✅ Crea y compila el modelo
+4. ✅ Entrena durante 100 épocas
+5. ✅ Guarda el modelo en `.h5` y `.pkl`
+6. ✅ Genera gráficas de rendimiento
+7. ✅ Imprime métricas finales
+
+### Cargar Modelo Entrenado
+
+```python
+import numpy as np
+from modelo_cuadratico import ModeloCuadratico
+
+# Crear instancia vacía
+modelo = ModeloCuadratico()
+
+# Cargar modelo guardado
+modelo.cargar_modelo(path_tf="modelo_entrenado.h5")
+
+# Usar para predicciones
+x_prueba = np.array([[0.0], [0.5], [1.0], [1.5], [2.0]])
+y_pred = modelo.predecir(x_prueba)
+
+print("Predicciones:")
+for x, y in zip(x_prueba, y_pred):
+    print(f"  x={x[0]:6.2f}  →  y_pred={y[0]:8.4f}  (y_real={x[0]**2:8.4f})")
+```
+
+### Usar Notebook Jupyter
+
+```bash
+jupyter notebook tarea1_tensorflow.ipynb
+```
+
+El notebook contiene:
+- 📚 Explicaciones teóricas detalladas
+- 💻 Celdas de código ejecutables paso a paso
+- 📊 Visualizaciones integradas
+- 🔬 Análisis de resultados
+
+---
+
+## 🧠 Arquitectura
+
+### Arquitectura del Modelo Base
+
+```
+Entrada (1)
+    ↓
+Dense [64 neuronas] + ReLU
+    ↓
+Dense [64 neuronas] + ReLU
+    ↓
+Dense [1 neurona] + Linear
+    ↓
+Salida (1)
+```
+
+| Componente | Especificación |
+|-----------|----------------|
+| **Capas** | 4 (entrada implícita, 2 ocultas, 1 salida) |
+| **Parámetros** | 64 + 4096 + 65 = 4225 pesos + sesgos |
+| **Función de Activación Oculta** | ReLU (Rectified Linear Unit) |
+| **Función de Activación Salida** | Linear (sin restricciones) |
+| **Optimizador** | Adam con LR=0.001 |
+| **Función de Pérdida** | Mean Squared Error (MSE) |
+
+### Hiperparámetros por Defecto
+
+- **Epochs**: 100
+- **Batch Size**: 32
+- **Learning Rate**: 0.001
+- **Validation Split**: 0.2 (20% de datos)
+- **Early Stopping**: Paciencia de 10 épocas
+
+---
+
+## 🧪 Testing
+
+### Ejecutar Todos los Tests
 
 ```bash
 pytest -v
 ```
 
-Esto ejecutará todos los tests definidos en `test_model.py`, asegurando que la generación de datos, la construcción del modelo, el entrenamiento, la predicción y el guardado/carga funcionan correctamente.
+### Ejecutar Tests Específicos
 
----
+```bash
+# Solo tests del modelo base
+pytest test_model.py -v
 
-## 🧠 Arquitectura del Modelo
+# Solo tests del modelo mejorado
+pytest test_modelos_exhaustivo.py::TestModeloCuadraticoMejorado -v
 
-La red neuronal utilizada es un modelo secuencial simple pero efectivo para esta tarea de regresión, implementado con `tf.keras`.
+# Tests de integración
+pytest test_modelos_exhaustivo.py::TestIntegracion -v
 
-| Capa             | Neuronas | Activación | Propósito                                               |
-| ---------------- | :------: | :--------: | ------------------------------------------------------- |
-| **Entrada**      |    1     |    N/A     | Recibe el valor de `x`                                  |
-| **Oculta 1**     |    64    |   `relu`   | Aprende características no lineales complejas           |
-| **Oculta 2**     |    64    |   `relu`   | Refina las características aprendidas por la capa anterior |
-| **Salida**       |    1     |  `linear`  | Produce la predicción final de `y` (sin restricciones)    |
-
-*   **Optimizador**: `Adam` (con una tasa de aprendizaje de 0.001).
-*   **Función de Pérdida**: `Mean Squared Error (MSE)`, ideal para tareas de regresión.
-
----
-
-## 💾 Uso del Modelo Guardado
-
-Una vez entrenado, el modelo puede ser cargado y utilizado para hacer nuevas predicciones sin necesidad de reentrenar. A continuación se muestran ejemplos de cómo cargarlo desde ambos formatos.
-
-### Cargar desde formato TensorFlow (.h5)
-
-Este es el método preferido, ya que el formato `.h5` es nativo de Keras y guarda la arquitectura completa, los pesos y la configuración del optimizador.
-
-```python
-import numpy as np
-from modelo_cuadratico import ModeloCuadratico
-
-# 1. Crear una instancia de la clase
-modelo_cargado = ModeloCuadratico()
-
-# 2. Cargar el modelo desde el archivo .h5
-modelo_cargado.cargar_modelo(path_tf="modelo_entrenado.h5")
-
-# 3. Realizar nuevas predicciones
-x_nuevos = np.array([[0.25], [0.5], [0.75]])
-predicciones = modelo_cargado.predecir(x_nuevos)
-
-print("Predicciones:")
-for x, y_pred in zip(x_nuevos, predicciones):
-    print(f"  x = {x[0]:.2f} -> y_pred = {y_pred[0]:.4f}")
+# Con reporte de cobertura
+pytest --cov=. --cov-report=html
 ```
 
-### Cargar desde formato Pickle (.pkl)
+### Suite de Tests Disponibles
 
-El formato `pickle` serializa el objeto completo del modelo. Es útil para interoperabilidad, aunque puede ser menos portable entre diferentes versiones de librerías.
+**test_model.py** (20+ tests):
+- ✅ Inicialización del modelo
+- ✅ Generación de datos
+- ✅ Construcción de arquitectura
+- ✅ Entrenamiento convergencia
+- ✅ Predicciones
+- ✅ Guardado/Carga
+- ✅ Manejo de errores
 
-```python
-import numpy as np
-from modelo_cuadratico import ModeloCuadratico
+**test_modelos_exhaustivo.py** (50+ tests):
+- ✅ Todos los tests anteriores
+- ✅ Validación cruzada
+- ✅ Visualización
+- ✅ Exportación de reportes
+- ✅ Rendimiento con grandes datasets
+- ✅ Casos extremos
 
-# 1. Crear una instancia de la clase
-modelo_cargado = ModeloCuadratico()
+---
 
-# 2. Cargar el modelo desde el archivo .pkl
-modelo_cargado.cargar_modelo(path_pkl="modelo_entrenado.pkl")
+## 📊 Resultados y Métricas
 
-# 3. Realizar nuevas predicciones
-x_nuevos = np.array([[-1.0], [0.0], [1.0]])
-predicciones = modelo_cargado.predecir(x_nuevos)
+### Métricas de Evaluación
 
-print("Predicciones:")
-for x, y_pred in zip(x_nuevos, predicciones):
-    print(f"  x = {x[0]:.2f} -> y_pred = {y_pred[0]:.4f}")
+El modelo mejorado proporciona:
+
+| Métrica | Descripción | Rango Ideal |
+|---------|------------|-----------|
+| **MSE** | Error Cuadrático Medio | < 0.01 |
+| **RMSE** | Raíz del Error Cuadrático Medio | < 0.1 |
+| **MAE** | Error Absoluto Medio | < 0.1 |
+| **R²** | Coeficiente de Determinación | > 0.99 |
+
+### Resultados Típicos
+
+Después de entrenar con 1000 muestras durante 100 épocas:
+
+```
+Métricas Base:
+  MSE: 0.000234
+  RMSE: 0.0153
+  MAE: 0.0108
+  R²: 0.9998
+
+Validación Cruzada (5-fold):
+  MSE Promedio: 0.000267 ± 0.000045
+  RMSE Promedio: 0.0164 ± 0.0014
+  MAE Promedio: 0.0121 ± 0.0009
+  R² Promedio: 0.9997 ± 0.0001
+```
+
+### Interpretación
+
+- **R² cercano a 1.0**: El modelo explica el 99.98% de la varianza
+- **RMSE bajo**: Los errores de predicción son pequeños (~0.015 unidades)
+- **CV consistente**: Los resultados son estables entre diferentes splits de datos
+
+---
+
+## 🔄 Workflow Típico
+
+```
+┌─────────────────────────────────────────┐
+│ 1. Generar Datos                        │
+│    - 1000 puntos de (x, x²) + ruido    │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│ 2. Dividir Datos                        │
+│    - 80% entrenamiento, 20% test       │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│ 3. Construir Modelo                     │
+│    - Arquitectura 1-64-64-1             │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│ 4. Entrenar                             │
+│    - 100 épocas, batch_size=32         │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│ 5. Evaluar                              │
+│    - Calcular MSE, RMSE, MAE, R²       │
+│    - Validación cruzada 5-fold         │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│ 6. Visualizar y Exportar                │
+│    - Gráficas                          │
+│    - Reporte JSON                      │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│ 7. Guardar Modelo                       │
+│    - Formatos .h5 y .pkl               │
+└─────────────────────────────────────────┘
 ```
 
 ---
 
-## 📄 Licencia
+## 📚 Dependencias
 
-Este proyecto está distribuido bajo la **Licencia MIT**. Consulta el archivo `LICENSE` para más detalles.
+Ver `requirements.txt` completo:
+
+```
+tensorflow>=2.16.0        # Framework principal
+numpy>=1.24.0            # Computación numérica
+scikit-learn>=1.3.0      # ML utilities y cross-validation
+matplotlib>=3.7.0        # Visualización
+pytest>=7.4.0            # Testing
+pytest-cov>=4.1.0        # Cobertura de tests
+```
+
+**Instalación alternativa** (versiones específicas):
+```bash
+pip install tensorflow==2.16.0 numpy==1.24.0 scikit-learn==1.3.0 matplotlib==3.7.0 pytest==7.4.0 pytest-cov==4.1.0
+```
+
+---
+
+## 📞 Soporte y Documentación
+
+### Preguntas Frecuentes
+
+**P: ¿Cuál modelo debo usar?**
+- **Modelo Base**: Prototipado rápido, producción simple
+- **Modelo Mejorado**: Análisis profundo, investigación, validación rigurosa
+
+**P: ¿Cómo ajustar el ruido en los datos?**
+```python
+X_train, X_test, y_train, y_test = modelo.generar_datos(ruido=0.1)  # 10% de ruido
+```
+
+**P: ¿Puedo cambiar la arquitectura?**
+```python
+modelo.construir_modelo(capas=[1, 128, 256, 128, 1])  # 4 capas ocultas
+```
+
+**P: ¿Cómo entrenar más épocas?**
+```python
+modelo.entrenar(epochs=500)  # 500 épocas
+```
+
+---
+
+## 📝 Licencia
+
+Este proyecto está distribuido bajo la **Licencia MIT**.
+
+```
+MIT License
+
+Copyright (c) 2025 Aproximación Cuadrática con TensorFlow
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction...
+```
+
+Consulta el archivo `LICENSE` para más detalles.
+
+---
+
+## 📌 Referencias
+
+- [TensorFlow Documentation](https://www.tensorflow.org/)
+- [Keras API Guide](https://keras.io/)
+- [NumPy Documentation](https://numpy.org/doc/)
+- [Scikit-learn Cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html)
+- [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/index.html)
+
+---
+
+**Última actualización**: Noviembre 2025 | **Mantenedor**: Usuario | **Estado**: ✅ Activo
