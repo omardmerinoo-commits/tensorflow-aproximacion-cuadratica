@@ -322,7 +322,7 @@ make run-proyecto6
 ---
 
 **Sesión cerrada**: 2025-11-18 10:30 UTC  
-**Generado por**: Sistema de Validación Automática  
+**Generado**: VALIDACION_ESTRUCTURA_REPORT.json  
 **Revisado por**: Control de Calidad  
 **Estado Final**: ✅ COMPLETADO
 

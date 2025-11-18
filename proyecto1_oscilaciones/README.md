@@ -1,4 +1,4 @@
-# Proyecto 1: IA para Oscilaciones Amortiguadas
+# Proyecto 1: Oscilaciones Amortiguadas (Modelo de aprendizaje profundo)
 
 ## Descripción General
 
