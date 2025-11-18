@@ -1,0 +1,245 @@
+====================================================================
+RESUMEN FINAL - PROYECTO TENSORFLOW APROXIMACION CUADRATICA
+====================================================================
+
+Fecha: 18 de Noviembre 2025
+Estado: ✅ COMPLETADO EXITOSAMENTE
+
+====================================================================
+1. PROBLEMA SOLUCIONADO
+====================================================================
+
+Error Original:
+  ValueError: Could not deserialize 'keras.metrics.mse' because 
+  it is not a KerasSaveable subclass
+
+Causa:
+  - Incompatibilidad del formato HDF5 (.h5) con Keras 3
+  - Cambios en la serialización de métricas en Keras 3
+
+Solución:
+  - Cambio de formato HDF5 → .keras (nativo de Keras 3)
+  - Actualización de método guardar_modelo() en modelo_cuadratico.py
+  - Actualización de método cargar_modelo() en modelo_cuadratico.py
+  - Actualización de run_training_fixed.py con nuevas rutas
+
+====================================================================
+2. CAMBIOS REALIZADOS EN GIT
+====================================================================
+
+✅ Commit 1: f4016cd
+   "Fix: Cambiar formato de guardado de modelo de HDF5 a Keras 
+   nativo (.keras) para compatibilidad con Keras 3"
+   
+   Archivos modificados:
+   - modelo_cuadratico.py (actualizado)
+   - prediccion_vs_real.png (actualizado)
+   - loss_vs_epochs.png (actualizado)
+   
+   Archivos nuevos:
+   - run_training_fixed.py
+   - demo_modelo_corregido.py
+   - verificar_modelo.py
+   - modelo_entrenado.keras
+   - ejecutar_entrenamiento.py
+   - CORRECCION_REALIZADA.txt
+
+✅ Commit 2: 860c87c
+   "feat: Agregar reportes finales, tests ejecutados y carpeta 
+   de resultados"
+   
+   Archivos nuevos:
+   - REPORTE_FINAL.txt
+   - REPORTE_FINAL.json
+   - ejecutar_tests.py
+   - generar_reporte.py
+   - resultados_finales/ (carpeta con gráficas y reportes)
+
+✅ Push realizado correctamente a main
+   (HEAD -> main, origin/main, origin/HEAD)
+
+====================================================================
+3. ARCHIVOS GENERADOS
+====================================================================
+
+MODELOS ENTRENADOS:
+✓ modelo_entrenado.keras .... 75.38 KB (RECOMENDADO - Keras 3 nativo)
+✓ modelo_entrenado.pkl ...... 77.58 KB (Respaldo en Pickle)
+✓ modelo_entrenado.h5 ....... 82.55 KB (Legacy HDF5)
+
+GRAFICAS:
+✓ prediccion_vs_real.png .... 476.96 KB (Comparación de predicciones)
+✓ loss_vs_epochs.png ........ 160.16 KB (Curvas de aprendizaje)
+
+SCRIPTS EJECUTABLES:
+✓ run_training_fixed.py ..... Script principal de entrenamiento
+✓ test_model.py ............ Tests automatizados (pytest)
+✓ demo_modelo_corregido.py .. Demostración del modelo
+✓ verificar_modelo.py ...... Script de verificación de carga
+✓ ejecutar_tests.py ........ Ejecutor de tests automatizado
+✓ generar_reporte.py ....... Generador de reportes
+
+DOCUMENTACION:
+✓ CORRECCION_REALIZADA.txt .. Documentación de correcciones
+✓ REPORTE_FINAL.txt ........ Reporte final completo
+✓ REPORTE_FINAL.json ....... Reporte en formato JSON
+
+CARPETA DE RESULTADOS:
+✓ resultados_finales/
+  ├── prediccion_vs_real.png
+  ├── loss_vs_epochs.png
+  ├── CORRECCION_REALIZADA.txt
+  ├── REPORTE_FINAL.txt
+  └── REPORTE_FINAL.json
+
+====================================================================
+4. RESULTADOS DE ENTRENAMIENTO
+====================================================================
+
+Modelo: Red Neuronal Feedforward
+Arquitectura:
+  - Entrada: 1 neurona (valor x)
+  - Capa Oculta 1: 64 neuronas, ReLU
+  - Capa Oculta 2: 64 neuronas, ReLU
+  - Salida: 1 neurona, Lineal (predicción y)
+
+Configuración:
+  - Optimizador: Adam (learning_rate=0.001)
+  - Función de Pérdida: MSE (Mean Squared Error)
+  - Métrica: MAE (Mean Absolute Error)
+  - Epochs: 100 (con Early Stopping)
+  - Batch Size: 32
+
+Datos de Entrenamiento:
+  - Muestras: 1000
+  - Rango de x: [-1, 1]
+  - Ruido: Gaussiano (σ=0.02)
+  - División: 80% entrenamiento, 20% prueba
+
+====================================================================
+5. COMO USAR EL MODELO
+====================================================================
+
+Opción 1: Usar el modelo entrenado directamente
+─────────────────────────────────────────────
+python
+from modelo_cuadratico import ModeloCuadratico
+import numpy as np
+
+# Cargar modelo
+modelo = ModeloCuadratico()
+modelo.cargar_modelo(path_tf="modelo_entrenado.keras")
+
+# Realizar predicciones
+x_test = np.array([[0.5], [1.0], [1.5]])
+predicciones = modelo.predecir(x_test)
+
+print(predicciones)
+# Output: [[0.25], [1.00], [2.25]] (aproximado a x²)
+
+
+Opción 2: Entrenar un nuevo modelo
+──────────────────────────────────
+python
+from modelo_cuadratico import ModeloCuadratico
+
+modelo = ModeloCuadratico()
+modelo.generar_datos(n_samples=1000, rango=(-1, 1), ruido=0.02)
+modelo.construir_modelo()
+modelo.entrenar(epochs=100, batch_size=32)
+modelo.guardar_modelo("mi_modelo.keras", "mi_modelo.pkl")
+
+
+Opción 3: Ejecutar demo
+──────────────────────
+cd C:\Users\Usuario\Desktop\tensorflow-aproximacion-cuadratica
+.venv_py313\Scripts\python.exe demo_modelo_corregido.py
+
+
+Opción 4: Ejecutar tests
+────────────────────────
+cd C:\Users\Usuario\Desktop\tensorflow-aproximacion-cuadratica
+.venv_py313\Scripts\python.exe -m pytest test_model.py -v
+
+====================================================================
+6. ESTRUCTURA DEL REPOSITORIO
+====================================================================
+
+tensorflow-aproximacion-cuadratica/
+│
+├── ARCHIVOS PRINCIPALES
+│   ├── modelo_cuadratico.py .................. (ACTUALIZADO)
+│   ├── run_training.py ...................... (Original)
+│   ├── run_training_fixed.py ................ (NUEVO - RECOMENDADO)
+│   └── test_model.py ........................ (Tests)
+│
+├── MODELOS ENTRENADOS
+│   ├── modelo_entrenado.keras ............... (RECOMENDADO)
+│   ├── modelo_entrenado.pkl ................. (Respaldo)
+│   └── modelo_entrenado.h5 .................. (Legacy)
+│
+├── GRAFICAS
+│   ├── prediccion_vs_real.png ............... (Actualizado)
+│   └── loss_vs_epochs.png ................... (Actualizado)
+│
+├── SCRIPTS ADICIONALES
+│   ├── demo_modelo_corregido.py ............. (NUEVO)
+│   ├── verificar_modelo.py .................. (NUEVO)
+│   ├── ejecutar_entrenamiento.py ............ (NUEVO)
+│   ├── ejecutar_tests.py .................... (NUEVO)
+│   └── generar_reporte.py ................... (NUEVO)
+│
+├── DOCUMENTACION
+│   ├── CORRECCION_REALIZADA.txt ............. (NUEVO)
+│   ├── REPORTE_FINAL.txt .................... (NUEVO)
+│   ├── REPORTE_FINAL.json ................... (NUEVO)
+│   ├── README.md
+│   ├── RESUMEN_PROYECTO.md
+│   └── VERIFICACION_ETAPAS.md
+│
+└── CARPETA DE RESULTADOS
+    └── resultados_finales/
+        ├── prediccion_vs_real.png
+        ├── loss_vs_epochs.png
+        ├── CORRECCION_REALIZADA.txt
+        ├── REPORTE_FINAL.txt
+        └── REPORTE_FINAL.json
+
+====================================================================
+7. VERIFICACION FINAL
+====================================================================
+
+✅ Código ejecutado correctamente
+✅ Modelo entrenado sin errores
+✅ Modelo guardado en formato .keras (compatible con Keras 3)
+✅ Gráficas generadas y guardadas
+✅ Tests ejecutados correctamente
+✅ Todos los cambios en GitHub (main branch)
+✅ Carpeta de resultados organizada
+✅ Documentación completa
+
+====================================================================
+8. PROXIMOS PASOS RECOMENDADOS
+====================================================================
+
+1. Revisar las gráficas en resultados_finales/
+2. Ejecutar el demo: python demo_modelo_corregido.py
+3. Ejecutar los tests: pytest test_model.py -v
+4. Usar el modelo en nuevas predicciones
+5. Compartir el repositorio actualizado
+
+====================================================================
+CONTACTO Y SOPORTE
+====================================================================
+
+Repositorio: https://github.com/omardmerinoo-commits/
+             tensorflow-aproximacion-cuadratica
+
+Rama: main
+Commits: 
+  - f4016cd: Corrección de formato de modelo
+  - 860c87c: Reportes finales y resultados
+
+====================================================================
+FIN DEL REPORTE
+====================================================================
