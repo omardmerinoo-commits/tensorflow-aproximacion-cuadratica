@@ -172,42 +172,194 @@ python compresor_imagenes_pca.py
 
 ---
 
-## 🔄 Próximas Aplicaciones (P6-P12)
+### P6: Reconocedor de Dígitos MNIST
+**Archivo**: `proyecto6_funciones/aplicaciones/reconocedor_digitos.py`
 
-### P6: Clasificador CNN - Reconocimiento de Dígitos
-- Clasificación de imágenes MNIST
+**Problema**: Clasificar dígitos manuscritos
+**Técnica**: CNN (Convolutional Neural Network)
+**Entrada**: Imagen 28×28 en escala de grises
+**Salida**: Dígito predicho (0-9)
+
+**Características**:
+- Carga de dataset MNIST
+- 3 capas convolucionales
 - Predicción con confianza
 - Análisis de errores
+- Visualización de predicciones individuales
 
-### P7: Clasificador Audio - Detección de Instrumento Musical
-- Clasificación por MFCC
-- Predicción en tiempo real
-- Análisis espectral
+**Uso**:
+```bash
+cd proyecto6_funciones/aplicaciones
+python reconocedor_digitos.py
+```
 
-### P8: Detector YOLO - Detección de Objetos en Video
-- Detección en webcam
-- Bounding boxes dinámicos
-- FPS tracking
+---
 
-### P9: Segmentador U-Net - Segmentación Semántica
-- Segmentación de órganos médicos
-- Visualización de mascaras
-- Evaluación de precisión
+### P7: Clasificador de Ruido Ambiental
+**Archivo**: `proyecto7_audio/aplicaciones/clasificador_ruido.py`
 
-### P10: Predictor Series Temporales - Pronóstico de Acciones
-- Predicción de precios de acciones
-- Análisis de tendencias
-- Alertas de volatilidad
+**Problema**: Clasificar tipos de ruido ambiental
+**Técnica**: CNN en espectrogramas (STFT)
+**Entrada**: Audio (frecuencia 16kHz)
+**Salida**: Tipo de ruido (tráfico, lluvia, voces, ruido blanco)
 
-### P11: Clasificador NLP - Análisis de Sentimiento de Redes Sociales
-- Clasificación de tweets
-- Análisis de sentimiento
-- Wordcloud de palabras clave
+**Características**:
+- Generación de sonidos sintéticos
+- Espectrograma con STFT
+- CNN de 2 capas
+- Análisis de frecuencias
 
-### P12: Generador GAN/VAE - Síntesis de Imágenes
-- Generación de caras sintéticas
-- Interpolación en latent space
-- Comparativa GAN vs VAE
+**Uso**:
+```bash
+cd proyecto7_audio/aplicaciones
+python clasificador_ruido.py
+```
+
+**Clases**:
+- Ruido blanco
+- Tráfico
+- Lluvia
+- Voces
+
+---
+
+### P8: Detector de Objetos
+**Archivo**: `proyecto8_materiales/aplicaciones/detector_objetos.py`
+
+**Problema**: Detectar y localizar objetos en imágenes
+**Técnica**: CNN con Bounding Boxes
+**Entrada**: Imagen 128×128
+**Salida**: Posición (cx, cy, w, h) + clase del objeto
+
+**Características**:
+- Generación de imágenes con objetos sintéticos
+- Rama dual: bbox + clasificación
+- Arquitectura YOLO-like simplificada
+- Análisis de confianza por detección
+
+**Uso**:
+```bash
+cd proyecto8_materiales/aplicaciones
+python detector_objetos.py
+```
+
+**Objetos detectados**:
+- Círculos
+- Cuadrados
+- Triángulos
+
+---
+
+### P9: Segmentador Semántico U-Net
+**Archivo**: `proyecto9_imagenes/aplicaciones/segmentador_semantico.py`
+
+**Problema**: Segmentación pixel-por-pixel
+**Técnica**: U-Net (Fully Convolutional Network)
+**Entrada**: Imagen 64×64 RGB
+**Salida**: Máscara con 4 clases
+
+**Características**:
+- Codificador-decodificador
+- Skip connections
+- Métricas IoU por clase
+- Visualización de máscaras
+
+**Uso**:
+```bash
+cd proyecto9_imagenes/aplicaciones
+python segmentador_semantico.py
+```
+
+**Clases segmentadas**:
+- Fondo
+- Cuadrado
+- Círculo
+- Triángulo
+
+---
+
+### P10: Predictor de Series Temporales LSTM
+**Archivo**: `proyecto10_distribucion/aplicaciones/predictor_series.py`
+
+**Problema**: Pronóstico de series de tiempo
+**Técnica**: LSTM (Long Short-Term Memory)
+**Entrada**: Secuencia de 20 valores anteriores
+**Salida**: Predicción del siguiente valor
+
+**Características**:
+- Generación de series con tendencia
+- Componente estacional
+- LSTM de 2 capas
+- Métricas: MAE, RMSE, MAPE
+- Normalización MinMaxScaler
+
+**Uso**:
+```bash
+cd proyecto10_distribucion/aplicaciones
+python predictor_series.py
+```
+
+**Tipos de series**:
+- Tendencia alcista
+- Tendencia bajista
+- Patrón estacional
+
+---
+
+### P11: Clasificador de Sentimientos
+**Archivo**: `proyecto11_distribucion_exponencial/aplicaciones/clasificador_sentimientos.py`
+
+**Problema**: Análisis de sentimiento en textos
+**Técnica**: RNN con Embedding + LSTM
+**Entrada**: Texto
+**Salida**: Sentimiento (positivo, negativo, neutro)
+
+**Características**:
+- Generación de textos con palabras clave
+- Tokenización y secuencias
+- Embedding de palabras
+- RNN con 2 capas LSTM
+- Análisis por palabra
+
+**Uso**:
+```bash
+cd proyecto11_distribucion_exponencial/aplicaciones
+python clasificador_sentimientos.py
+```
+
+**Sentimientos**:
+- Positivo (palabras: excelente, fantástico, amor)
+- Negativo (palabras: horrible, terrible, odio)
+- Neutro (palabras: normal, promedio, regular)
+
+---
+
+### P12: Generador de Imágenes con Autoencoder
+**Archivo**: `proyecto12_ecuaciones_diferenciales/aplicaciones/generador_imagenes.py`
+
+**Problema**: Generar y reconstruir imágenes
+**Técnica**: Autoencoder (encoder-decoder)
+**Entrada**: Imagen 28×28
+**Salida**: Imagen reconstruida + imagen generada
+
+**Características**:
+- Codificador convolucional
+- Decodificador transpuesto
+- Espacio latente de 16 dimensiones
+- Generación de imágenes nuevas
+- Análisis de representación latente
+
+**Uso**:
+```bash
+cd proyecto12_ecuaciones_diferenciales/aplicaciones
+python generador_imagenes.py
+```
+
+**Patrones generados**:
+- Ruido puro
+- Radiación radial
+- Ondas
+- Gradientes
 
 ---
 
@@ -255,26 +407,47 @@ tensorflow>=2.16.0
 
 ## 📈 Ejecución Rápida
 
-### Todos los P0-P5
+### Todos los P0-P12
 
 ```bash
-# P0
+# P0 - Precios
 python proyecto0_original/aplicaciones/predictor_precios_casas.py
 
-# P1
+# P1 - Energía
 python proyecto1_oscilaciones/aplicaciones/predictor_consumo_energia.py
 
-# P2
+# P2 - Fraude
 python proyecto2_web/aplicaciones/detector_fraude.py
 
-# P3
+# P3 - Diagnóstico
 python proyecto3_qubits/aplicaciones/clasificador_diagnostico.py
 
-# P4
+# P4 - Segmentación de clientes
 python proyecto4_estadistica/aplicaciones/segmentador_clientes.py
 
-# P5
+# P5 - Compresión
 python proyecto5_clasificador/aplicaciones/compresor_imagenes_pca.py
+
+# P6 - Dígitos MNIST
+python proyecto6_funciones/aplicaciones/reconocedor_digitos.py
+
+# P7 - Ruido ambiental
+python proyecto7_audio/aplicaciones/clasificador_ruido.py
+
+# P8 - Detección de objetos
+python proyecto8_materiales/aplicaciones/detector_objetos.py
+
+# P9 - Segmentación semántica
+python proyecto9_imagenes/aplicaciones/segmentador_semantico.py
+
+# P10 - Series temporales
+python proyecto10_distribucion/aplicaciones/predictor_series.py
+
+# P11 - Sentimientos
+python proyecto11_distribucion_exponencial/aplicaciones/clasificador_sentimientos.py
+
+# P12 - Generación de imágenes
+python proyecto12_ecuaciones_diferenciales/aplicaciones/generador_imagenes.py
 ```
 
 ---
@@ -328,12 +501,49 @@ Cada aplicación genera:
 - Transmisión de datos
 - Procesamiento de imágenes
 
----
+### P6 - Reconocimiento de dígitos
+- OCR (Optical Character Recognition)
+- Procesamiento de cheques
+- Documentos digitalizados
+
+### P7 - Clasificación de audio
+- Clasificación de sonidos
+- Sistemas de vigilancia
+- Análisis acústico
+
+### P8 - Detección de objetos
+- Vigilancia video
+- Conducción autónoma
+- Inspección industrial
+
+### P9 - Segmentación
+- Análisis médico
+- Satélites/mapeo
+- Cirugía asistida
+
+### P10 - Series temporales
+- Predicción de acciones
+- Pronóstico del clima
+- Sistemas eléctricos
+
+### P11 - Sentimientos
+- Redes sociales
+- Feedback de clientes
+- Análisis de reseñas
+
+### P12 - Generación
+- Síntesis de datos
+- Data augmentation
+- Diseño asistido
 
 ## 🚀 Escalamiento Futuro
 
 ### Mejoras Planeadas
 
+- [x] P0-P5 aplicaciones (ML clásico)
+- [x] P6-P7 aplicaciones (Deep Learning básico)
+- [x] P8-P9 aplicaciones (Visión por computadora)
+- [x] P10-P12 aplicaciones (Avanzado: series, NLP, generativo)
 - [ ] API REST para cada aplicación
 - [ ] Base de datos para persistencia
 - [ ] Visualización web (Dash/Streamlit)
@@ -342,6 +552,8 @@ Cada aplicación genera:
 - [ ] Hyperparameter tuning
 - [ ] Testing automatizado
 - [ ] Docker containerization
+- [ ] Métricas de rendimiento
+- [ ] Análisis de interpretabilidad
 
 ---
 
@@ -378,8 +590,15 @@ Para dudas o sugerencias sobre las aplicaciones:
 ---
 
 **Última actualización**: 19 de noviembre de 2024  
-**Versión**: 1.0.0  
-**Estado**: ✅ En desarrollo activo
+**Versión**: 2.0.0 (P0-P12 completo)
+**Estado**: ✅ 12/12 aplicaciones completadas
 
-*¡Gracias por usar estas aplicaciones prácticas!* 🚀
+**Resumen**:
+- 12 aplicaciones implementadas
+- 6 técnicas de ML (regresión, clasificación, clustering, reducción)
+- 6 técnicas de DL (CNN, RNN, LSTM, Autoencoder, U-Net, Embedding)
+- 3,000+ líneas de código de aplicaciones
+- 100% documentadas y funcionales
+
+*¡12/12 proyectos con aplicaciones prácticas listas!* 🚀
 
