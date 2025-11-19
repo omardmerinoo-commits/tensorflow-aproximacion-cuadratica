@@ -1,0 +1,25 @@
+{
+  "proyecto": "P11 - Clasificador de Sentimientos",
+  "tecnica": "RNN + Embedding + LSTM",
+  "fecha": "2025-11-19T17:44:11.165111",
+  "configuracion": {
+    "vocab_size": 500,
+    "max_len": 20,
+    "embedding_dim": 16,
+    "epochs": 20,
+    "batch_size": 32
+  },
+  "metricas": {
+    "accuracy_train": 1.0,
+    "accuracy_test": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "muestras_train": 720,
+    "muestras_test": 180
+  },
+  "modelo": {
+    "parametros": 41731,
+    "capas": "Embedding -> LSTM(64) -> LSTM(32) -> Dense(16) -> Dense(3)"
+  }
+}

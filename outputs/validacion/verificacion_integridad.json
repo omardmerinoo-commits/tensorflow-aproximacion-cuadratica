@@ -1,0 +1,97 @@
+{
+  "titulo": "Verificacion de Integridad - Proyectos P0-P12",
+  "fecha": "2025-11-19T17:38:41.601911",
+  "resumen": {
+    "total": 13,
+    "existentes": 10,
+    "faltantes": 3,
+    "porcentaje": 76.92307692307693
+  },
+  "detalles": [
+    {
+      "id": "P0",
+      "estado": "EXISTE",
+      "ruta": "proyecto0_original\\aplicaciones\\predictor_precios_casas.py",
+      "tamanio": 8393,
+      "fecha_mod": "2025-11-19T16:51:31.945775"
+    },
+    {
+      "id": "P1",
+      "estado": "EXISTE",
+      "ruta": "proyecto1_oscilaciones\\aplicaciones\\predictor_consumo_energia.py",
+      "tamanio": 8190,
+      "fecha_mod": "2025-11-19T16:52:10.833778"
+    },
+    {
+      "id": "P2",
+      "estado": "EXISTE",
+      "ruta": "proyecto2_web\\aplicaciones\\detector_fraude.py",
+      "tamanio": 9317,
+      "fecha_mod": "2025-11-19T16:52:56.128864"
+    },
+    {
+      "id": "P3",
+      "estado": "EXISTE",
+      "ruta": "proyecto3_qubits\\aplicaciones\\clasificador_diagnostico.py",
+      "tamanio": 11199,
+      "fecha_mod": "2025-11-19T16:53:41.363862"
+    },
+    {
+      "id": "P4",
+      "estado": "EXISTE",
+      "ruta": "proyecto4_estadistica\\aplicaciones\\segmentador_clientes.py",
+      "tamanio": 10232,
+      "fecha_mod": "2025-11-19T16:54:18.187860"
+    },
+    {
+      "id": "P5",
+      "estado": "EXISTE",
+      "ruta": "proyecto5_clasificador\\aplicaciones\\compresor_imagenes_pca.py",
+      "tamanio": 10251,
+      "fecha_mod": "2025-11-19T16:54:56.788865"
+    },
+    {
+      "id": "P6",
+      "estado": "EXISTE",
+      "ruta": "proyecto6_funciones\\aplicaciones\\reconocedor_digitos.py",
+      "tamanio": 9343,
+      "fecha_mod": "2025-11-19T16:57:04.986831"
+    },
+    {
+      "id": "P7",
+      "estado": "EXISTE",
+      "ruta": "proyecto7_audio\\aplicaciones\\clasificador_ruido.py",
+      "tamanio": 10236,
+      "fecha_mod": "2025-11-19T16:57:51.633826"
+    },
+    {
+      "id": "P8",
+      "estado": "EXISTE",
+      "ruta": "proyecto8_materiales\\aplicaciones\\detector_objetos.py",
+      "tamanio": 11224,
+      "fecha_mod": "2025-11-19T16:59:41.039830"
+    },
+    {
+      "id": "P9",
+      "estado": "EXISTE",
+      "ruta": "proyecto9_imagenes\\aplicaciones\\segmentador_semantico.py",
+      "tamanio": 10380,
+      "fecha_mod": "2025-11-19T17:00:18.195828"
+    },
+    {
+      "id": "P10",
+      "estado": "FALTA",
+      "ruta": "proyecto10_series\\aplicaciones\\predictor_series.py"
+    },
+    {
+      "id": "P11",
+      "estado": "FALTA",
+      "ruta": "proyecto11_nlp\\aplicaciones\\clasificador_sentimientos.py"
+    },
+    {
+      "id": "P12",
+      "estado": "FALTA",
+      "ruta": "proyecto12_generador\\aplicaciones\\generador_imagenes.py"
+    }
+  ]
+}
