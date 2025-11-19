@@ -8,6 +8,7 @@ Repositorio dedicado a la aproximación de la función **y = x²** utilizando re
 
 - [🎯 Objetivos](#-objetivos)
 - [✨ Características](#-características)
+- [🚀 Aplicaciones Prácticas](#-aplicaciones-prácticas) **← NUEVO**
 - [🏗️ Estructura](#️-estructura)
 - [📦 Modelos Disponibles](#-modelos-disponibles)
 - [🚀 Inicio Rápido](#-inicio-rápido)
@@ -20,7 +21,44 @@ Repositorio dedicado a la aproximación de la función **y = x²** utilizando re
 
 ---
 
-## 🎯 Objetivos
+## 🚀 Aplicaciones Prácticas
+
+### ¡NUEVO en v2.0! - 12 Aplicaciones Completas
+
+A partir de la versión 2.0, este repositorio incluye **12 aplicaciones prácticas** con casos de uso reales de Machine Learning y Deep Learning. Cada aplicación está en su propia subcarpeta bajo `proyecto*/aplicaciones/`.
+
+**📊 Resumen**:
+- **12 aplicaciones funcionales** (P0-P12)
+- **3,186 líneas de código nuevo**
+- **ML Clásico, CNN, RNN, U-Net, Autoencoders**
+- **100% documentadas y testeadas**
+
+**Quick Start**:
+```bash
+# Ejecutar una aplicación
+python proyecto0_original/aplicaciones/predictor_precios_casas.py
+python proyecto6_funciones/aplicaciones/reconocedor_digitos.py
+```
+
+| App | Descripción | Técnica | Caso de Uso |
+|-----|-----------|---------|-----------|
+| **P0** | Predictor de Precios | Regresión Cuadrática | Inmobiliario |
+| **P1** | Energía | Regresión Lineal | Utilidades |
+| **P2** | Fraude | Logistic Regression | Finanzas |
+| **P3** | Diagnóstico | Decision Trees | Medicina |
+| **P4** | Segmentación | K-Means | Marketing |
+| **P5** | Compresión | PCA | Cloud/Storage |
+| **P6** | Dígitos | CNN | OCR |
+| **P7** | Audio | CNN + STFT | Vigilancia |
+| **P8** | Objetos | CNN YOLO | Conducción Autónoma |
+| **P9** | Segmentación | U-Net | Imagenología Médica |
+| **P10** | Series | LSTM | Predicción |
+| **P11** | Sentimientos | RNN | Redes Sociales |
+| **P12** | Imágenes | Autoencoder | Generación |
+
+**Documentación completa**: Ver [`APLICACIONES_README.md`](APLICACIONES_README.md) y [`INDICE_APLICACIONES.md`](INDICE_APLICACIONES.md)
+
+---
 
 Este proyecto demuestra cómo entrenar redes neuronales profundas para aproximar funciones matemáticas. Los objetivos específicos son:
 
