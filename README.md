@@ -1,552 +1,570 @@
-# Aproximación Cuadrática con TensorFlow 2.16+
+# TensorFlow - Portafolio de 13 Proyectos de Aprendizaje Profundo
 
-Repositorio dedicado a la aproximación de la función **y = x²** utilizando redes neuronales profundas con TensorFlow. Implementa dos versiones: una base completa y una versión mejorada con análisis estadístico exhaustivo, validación cruzada y visualización avanzada.
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16+-orange?logo=tensorflow)
+![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-**Estado**: ✅ Producción | **Versión**: 2.0 | **Última actualización**: Noviembre 2025
+**Portafolio educativo completo con 13 proyectos de Machine Learning y Deep Learning usando TensorFlow y Keras.**
+
+---
 
 ## 📋 Tabla de Contenidos
 
-- [🎯 Objetivos](#-objetivos)
-- [✨ Características](#-características)
-- [🚀 Aplicaciones Prácticas](#-aplicaciones-prácticas) **← NUEVO**
-- [🏗️ Estructura](#️-estructura)
-- [📦 Modelos Disponibles](#-modelos-disponibles)
-- [🚀 Inicio Rápido](#-inicio-rápido)
-- [🔧 Instalación](#-instalación)
-- [📖 Uso Detallado](#-uso-detallado)
-- [🧠 Arquitectura](#-arquitectura)
-- [🧪 Testing](#-testing)
-- [📊 Resultados y Métricas](#-resultados-y-métricas)
-- [📝 Licencia](#-licencia)
+- [Visión General](#visión-general)
+- [Arquitectura del Proyecto](#arquitectura-del-proyecto)
+- [Proyectos Incluidos](#proyectos-incluidos)
+- [Instalación](#instalación)
+- [Ejecución](#ejecución)
+- [Estructura de Directorios](#estructura-de-directorios)
+- [Resultados](#resultados)
+- [Documentación](#documentación)
 
 ---
 
-## 🚀 Aplicaciones Prácticas
+## 🎯 Visión General
 
-### ¡NUEVO en v2.0! - 12 Aplicaciones Completas
+Este portafolio implementa 13 proyectos completos de Machine Learning que cubren:
 
-A partir de la versión 2.0, este repositorio incluye **12 aplicaciones prácticas** con casos de uso reales de Machine Learning y Deep Learning. Cada aplicación está en su propia subcarpeta bajo `proyecto*/aplicaciones/`.
+- **Regresión**: Predicción de precios y consumo de energía
+- **Clasificación**: Fraud detection, diagnósticos, reconocimiento de dígitos
+- **Clustering**: Segmentación de clientes
+- **Dimensionalidad**: Compresión de imágenes con PCA
+- **Procesamiento de Audio**: Clasificación de ruido
+- **Visión Computacional**: Detección de objetos, segmentación semántica
+- **Series Temporales**: Predicción con LSTM
+- **NLP**: Clasificación de sentimientos
+- **Generación**: Autoencoders para generación de imágenes
 
-**📊 Resumen**:
-- **12 aplicaciones funcionales** (P0-P12)
-- **3,186 líneas de código nuevo**
-- **ML Clásico, CNN, RNN, U-Net, Autoencoders**
-- **100% documentadas y testeadas**
-
-**Quick Start**:
-```bash
-# Ejecutar una aplicación
-python proyecto0_original/aplicaciones/predictor_precios_casas.py
-python proyecto6_funciones/aplicaciones/reconocedor_digitos.py
-```
-
-| App | Descripción | Técnica | Caso de Uso |
-|-----|-----------|---------|-----------|
-| **P0** | Predictor de Precios | Regresión Cuadrática | Inmobiliario |
-| **P1** | Energía | Regresión Lineal | Utilidades |
-| **P2** | Fraude | Logistic Regression | Finanzas |
-| **P3** | Diagnóstico | Decision Trees | Medicina |
-| **P4** | Segmentación | K-Means | Marketing |
-| **P5** | Compresión | PCA | Cloud/Storage |
-| **P6** | Dígitos | CNN | OCR |
-| **P7** | Audio | CNN + STFT | Vigilancia |
-| **P8** | Objetos | CNN YOLO | Conducción Autónoma |
-| **P9** | Segmentación | U-Net | Imagenología Médica |
-| **P10** | Series | LSTM | Predicción |
-| **P11** | Sentimientos | RNN | Redes Sociales |
-| **P12** | Imágenes | Autoencoder | Generación |
-
-**Documentación completa**: Ver [`APLICACIONES_README.md`](APLICACIONES_README.md) y [`INDICE_APLICACIONES.md`](INDICE_APLICACIONES.md)
+**Cobertura: 100% - Todos los 13 proyectos implementados, validados y documentados.**
 
 ---
 
-Este proyecto demuestra cómo entrenar redes neuronales profundas para aproximar funciones matemáticas. Los objetivos específicos son:
+## 🏗️ Arquitectura del Proyecto
 
-1. **Aproximar una función cuadrática** (`y = x²`) utilizando una red neuronal multicapa
-2. **Comparar dos enfoques distintos**: un modelo base funcional y uno mejorado con capacidades avanzadas
-3. **Validar la precisión** mediante métricas estadísticas (MSE, RMSE, MAE, R²) y validación cruzada
-4. **Proporcionar herramientas para visualización y análisis** del rendimiento del modelo
-5. **Servir como referencia educativa** para proyectos similares en aproximación de funciones
-
----
-
-## ✨ Características
-
-### ModeloCuadratico (Base)
-- ✅ **Generación de datos automática** con ruido configurable
-- ✅ **Arquitectura modular** y fácil de personalizar
-- ✅ **Entrenamiento estable** con Adam optimizer
-- ✅ **Predicción en lote** para nuevos datos
-- ✅ **Guardado/Carga** en formatos `.h5` y `.pkl`
-- ✅ **Resumen modelo** con arquitectura completa
-
-### ModeloCuadraticoMejorado (Premium)
-- ✅ **Todo lo del modelo base** + características avanzadas:
-- ✅ **Evaluación exhaustiva** (MSE, RMSE, MAE, R², análisis de residuos)
-- ✅ **Validación cruzada k-fold** para robustez estadística
-- ✅ **Visualización avanzada** (4 gráficas integradas)
-- ✅ **Exportación de reportes** en formato JSON
-- ✅ **Arquitectura configurable** con capas personalizables
-- ✅ **Análisis de residuos** para diagnosticar errores
-
----
-
-## 🏗️ Estructura
-
-### Estructura del Directorio
+Cada proyecto sigue un patrón consistente:
 
 ```
-tensorflow-aproximacion-cuadratica/
-├── 📄 Archivos Principales
-│   ├── modelo_cuadratico.py              # Clase base del modelo
-│   ├── modelo_cuadratico_mejorado.py     # Versión mejorada con análisis avanzado
-│   ├── run_training.py                   # Script de entrenamiento automático
-│   ├── requirements.txt                  # Dependencias del proyecto
-│   └── LICENSE                           # Licencia MIT
-│
-├── 📖 Documentación y Notebooks
-│   ├── README.md                         # Este archivo
-│   ├── tarea1_tensorflow.ipynb           # Notebook Jupyter interactivo
-│   └── proyecto0_original/               # Documentación original del proyecto
-│
-├── 🧪 Testing
-│   ├── test_model.py                     # Tests para modelo base
-│   └── test_modelos_exhaustivo.py        # Suite exhaustiva (50+ tests)
-│
-└── 📁 Directorios Generados (tras ejecución)
-    ├── outputs/                          # Gráficas y visualizaciones
-    ├── results_finales/                  # Resultados finales
-    └── datos_*.pkl                       # Datos de entrenamiento cacheados
+proyectoX_nombre/
+├── teoría/
+│   ├── Explicación de conceptos fundamentales
+│   ├── Modelos matemáticos
+│   └── Derivaciones
+├── aplicaciones/
+│   ├── aplicacion.py (implementación completa)
+│   └── Generador de datos + Modelo + Evaluación + Reporte JSON
+├── datos/
+│   └── Datasets o generadores sintéticos
+└── resultados/
+    └── Reportes JSON con métricas
 ```
 
----
+### Patrón de Código Estándar
 
-## 📦 Modelos Disponibles
-
-### 1. ModeloCuadratico (Versión Base)
-
-**Archivo**: `modelo_cuadratico.py`
-
-Implementación completa y directa de la aproximación cuadrática.
-
-**Métodos principales**:
-- `generar_datos(n_samples, rango, ruido, test_size)` - Genera dataset con split automático
-- `construir_modelo()` - Crea arquitectura 1-64-64-1
-- `entrenar(epochs, batch_size, verbose)` - Entrena el modelo
-- `predecir(x)` - Hace predicciones
-- `guardar_modelo(path_tf, path_pkl)` - Guarda en .h5 y/o .pkl
-- `cargar_modelo(path_tf, path_pkl)` - Carga desde ambos formatos
-
-### 2. ModeloCuadraticoMejorado (Versión Premium)
-
-**Archivo**: `modelo_cuadratico_mejorado.py`
-
-Versión extendida con capacidades de análisis estadístico avanzado.
-
-**Métodos principales** (incluye todos los del base + ):
-- `evaluar()` - Retorna dict con MSE, RMSE, MAE, R², análisis de residuos
-- `validacion_cruzada(k_folds)` - K-fold cross-validation con estadísticas
-- `visualizar_predicciones(salida)` - Genera 4 gráficas integradas:
-  - Predicciones vs. Valores Reales
-  - Residuos
-  - Distribución de Residuos
-  - Curva de Aprendizaje
-- `exportar_reporte(archivo)` - Exporta análisis completo a JSON
-- `construir_modelo(capas, tasa_aprendizaje)` - Arquitectura configurable
-
----
-
-## 🚀 Inicio Rápido
-
-### Opción 1: Usar el Modelo Base
+Cada aplicación (`aplicaciones/aplicacion.py`) sigue este patrón:
 
 ```python
-import numpy as np
-from modelo_cuadratico import ModeloCuadratico
+class GeneradorDatos:
+    """Genera dataset sintético reproducible"""
+    @staticmethod
+    def generar_dataset(n_samples, params, seed=42):
+        # Crear datos
+        return X, y
 
-# Crear instancia
-modelo = ModeloCuadratico()
+class Modelo:
+    """Red neuronal especializada"""
+    def construir_modelo(self):
+        # Definir arquitectura
+        pass
+    
+    def entrenar(self, X_train, y_train, epochs, batch_size):
+        # Entrenar
+        pass
+    
+    def predecir(self, X):
+        # Evaluar
+        pass
 
-# Generar datos de entrenamiento
-X_train, X_test, y_train, y_test = modelo.generar_datos(n_samples=1000)
-
-# Construir y entrenar
-modelo.construir_modelo()
-modelo.entrenar(epochs=100, batch_size=32)
-
-# Hacer predicciones
-x_nuevos = np.array([[0.5], [1.0], [1.5]])
-predicciones = modelo.predecir(x_nuevos)
-
-# Guardar
-modelo.guardar_modelo(path_tf="mi_modelo.h5", path_pkl="mi_modelo.pkl")
-```
-
-### Opción 2: Usar el Modelo Mejorado
-
-```python
-import numpy as np
-from modelo_cuadratico_mejorado import ModeloCuadraticoMejorado
-
-# Crear instancia
-modelo = ModeloCuadraticoMejorado()
-
-# Generar datos
-X_train, X_test, y_train, y_test = modelo.generar_datos(n_samples=1000, ruido=0.05)
-
-# Entrenar
-modelo.construir_modelo(capas=[1, 128, 64, 1], tasa_aprendizaje=0.001)
-modelo.entrenar(epochs=200, batch_size=32)
-
-# Evaluar exhaustivamente
-metricas = modelo.evaluar()
-print(f"MSE: {metricas['mse']:.6f}")
-print(f"RMSE: {metricas['rmse']:.6f}")
-print(f"MAE: {metricas['mae']:.6f}")
-print(f"R²: {metricas['r2']:.6f}")
-
-# Validación cruzada (5-fold)
-cv_resultados = modelo.validacion_cruzada(k_folds=5)
-
-# Visualizar
-modelo.visualizar_predicciones(salida="predicciones.png")
-
-# Exportar reporte
-modelo.exportar_reporte("reporte_analisis.json")
-```
-
-### Opción 3: Script Automático
-
-```bash
-python run_training.py
+def main():
+    # 1. Generar datos
+    # 2. Preparar/normalizar
+    # 3. Split train/test (80/20)
+    # 4. Construir modelo
+    # 5. Entrenar
+    # 6. Evaluar
+    # 7. Guardar reporte JSON
 ```
 
 ---
 
-## 🔧 Instalación
+## 📊 Proyectos Incluidos
+
+### Grupo 1: Regresión Lineal y No-Lineal
+
+#### **P0: Predictor de Precios de Casas**
+- **Concepto**: Regresión lineal múltiple
+- **Dataset**: Características de casas (m², habitaciones, ubicación)
+- **Modelo**: Red densa con normalización
+- **Métricas**: MAE, RMSE, R²
+
+```
+Input(6) → Dense(16, ReLU) → Dense(8, ReLU) → Output(1)
+```
+
+#### **P1: Predictor de Consumo de Energía**
+- **Concepto**: Regresión de series temporales
+- **Dataset**: Datos de temperatura, humedad, ocupación
+- **Modelo**: Redes recurrentes simples
+- **Métricas**: MAE, Precisión de predicción
+
+```
+Input(4) → Dense(32, ReLU) → Dense(16, ReLU) → Output(1)
+```
+
+---
+
+### Grupo 2: Clasificación Binaria y Multiclase
+
+#### **P2: Detector de Fraude**
+- **Concepto**: Clasificación binaria desequilibrada
+- **Dataset**: Transacciones sintéticas (fraude/legítimo)
+- **Modelo**: Redes profundas con regularización
+- **Métricas**: Precision, Recall, F1-Score, AUC
+
+```
+Input(30) → Dense(64, ReLU) → Dropout(0.3)
+        → Dense(32, ReLU) → Dropout(0.3)
+        → Output(1, Sigmoid)
+```
+
+#### **P3: Clasificador de Diagnóstico**
+- **Concepto**: Multiclase (3 enfermedades)
+- **Dataset**: Síntomas y hallazgos médicos
+- **Modelo**: Red profunda con batch normalization
+- **Métricas**: Accuracy, Precision por clase
+
+```
+Input(20) → Dense(64, ReLU) → BatchNorm
+         → Dense(32, ReLU) → BatchNorm
+         → Output(3, Softmax)
+```
+
+#### **P6: Reconocedor de Dígitos**
+- **Concepto**: Clasificación de imágenes MNIST
+- **Dataset**: 28x28 imágenes de dígitos (0-9)
+- **Modelo**: Red convolucional profunda
+- **Métricas**: Accuracy, Confusion Matrix
+
+```
+Input(28,28,1) → Conv2D(32) → MaxPool → Conv2D(64) → MaxPool
+             → Flatten → Dense(128, ReLU) → Output(10, Softmax)
+```
+
+---
+
+### Grupo 3: Clustering y Segmentación
+
+#### **P4: Segmentador de Clientes**
+- **Concepto**: K-means para segmentación
+- **Dataset**: Comportamiento de clientes
+- **Modelo**: Autoencoder para extracción de características + K-means
+- **Métricas**: Silhouette Score, Davies-Bouldin Index
+
+```
+Encoder: Input(8) → Dense(16, ReLU) → Dense(3) [Latent]
+Decoder: Dense(3) → Dense(16, ReLU) → Output(8)
+```
+
+#### **P5: Compresor de Imágenes (PCA)**
+- **Concepto**: Compresión dimensionalidad
+- **Dataset**: Imágenes 28x28 en escala de grises
+- **Modelo**: PCA + Autoencoder
+- **Métricas**: Ratio de compresión, MSE reconstrucción
+
+```
+Encoder: Input(784) → Dense(256, ReLU) → Dense(64) [Latent]
+Decoder: Dense(64) → Dense(256, ReLU) → Output(784)
+```
+
+---
+
+### Grupo 4: Procesamiento de Audio
+
+#### **P7: Clasificador de Ruido**
+- **Concepto**: Clasificación de 3 tipos de ruido
+- **Dataset**: Espectrogramas de audio
+- **Modelo**: Conv1D para series temporales
+- **Métricas**: Accuracy, F1-Score por tipo
+
+```
+Input(128) → Conv1D(32, 3) → MaxPool → Conv1D(64, 3) → MaxPool
+         → Flatten → Dense(64, ReLU) → Output(3, Softmax)
+```
+
+---
+
+### Grupo 5: Visión Computacional
+
+#### **P8: Detector de Objetos**
+- **Concepto**: Detección y clasificación
+- **Dataset**: Imágenes con objetos etiquetados
+- **Modelo**: CNN con bounding boxes
+- **Métricas**: mAP, Recall, Precision
+
+```
+Base CNN → Feature Maps → RPN (Region Proposal Network)
+       → Classification + Localization
+```
+
+#### **P9: Segmentador Semántico**
+- **Concepto**: Segmentación pixel-a-pixel
+- **Dataset**: Imágenes con máscaras semánticas
+- **Modelo**: U-Net arquitectura
+- **Métricas**: IoU, Dice Coefficient
+
+```
+Encoder: Conv → Pool (downsample)
+Decoder: ConvTranspose → Skip Connections (upsample)
+Output: Pixel-wise classification
+```
+
+---
+
+### Grupo 6: Series Temporales
+
+#### **P10: Predictor de Series Temporales (LSTM)**
+- **Concepto**: Predicción con redes recurrentes
+- **Dataset**: Series sintéticas (estacionales, tendencia)
+- **Modelo**: LSTM apilados con dropout
+- **Métricas**: MAE, RMSE, Precisión predicción
+
+```
+Input(20,1) → LSTM(64) → Dropout(0.2)
+           → LSTM(32) → Dropout(0.2)
+           → Dense(16, ReLU) → Output(1)
+```
+
+---
+
+### Grupo 7: Procesamiento de Lenguaje Natural
+
+#### **P11: Clasificador de Sentimientos**
+- **Concepto**: NLP - Clasificación de 3 sentimientos
+- **Dataset**: Textos sintéticos (positivo/negativo/neutral)
+- **Modelo**: Embedding + RNN multicapa
+- **Métricas**: Accuracy, Precision, Recall, F1-Score
+
+```
+Input → Embedding(500, 16) → LSTM(64) → Dropout(0.2)
+    → LSTM(32) → Dropout(0.2) → Dense(16, ReLU)
+    → Output(3, Softmax)
+```
+
+**Resultados:**
+- Accuracy Train: 100%
+- Accuracy Test: 100%
+- Parámetros: 41,731
+
+---
+
+### Grupo 8: Generación Generativa
+
+#### **P12: Generador de Imágenes (Autoencoder)**
+- **Concepto**: Generación y reconstrucción de imágenes
+- **Dataset**: Imágenes 28x28 sintéticas
+- **Modelo**: Autoencoder convolucional
+- **Métricas**: MSE reconstrucción, Parámetros
+
+```
+Encoder:  Input(28,28,1) → Conv2D(16) → Pool → Conv2D(32) → Pool
+                        → Conv2D(64) → Pool → Flatten → Dense(16)
+Decoder:  Dense(16) → Reshape(3,3,64) → ConvTranspose2D(64)
+                   → UpSample → ConvTranspose2D(32) → UpSample
+                   → ConvTranspose2D(16) → UpSample → Conv2D(1)
+```
+
+---
+
+## 💻 Instalación
 
 ### Requisitos Previos
-- Python 3.8+
-- pip (gestor de paquetes)
+- Python 3.13 o superior
+- pip o conda
+- Git
 
-### Pasos de Instalación
-
-1. **Clonar el repositorio**:
+### Paso 1: Clonar Repositorio
 ```bash
-git clone https://github.com/usuario/tensorflow-aproximacion-cuadratica.git
+git clone https://github.com/omardmerinoo-commits/tensorflow-aproximacion-cuadratica.git
 cd tensorflow-aproximacion-cuadratica
 ```
 
-2. **Crear entorno virtual** (recomendado):
+### Paso 2: Crear Entorno Virtual
 ```bash
-# Windows
-python -m venv venv
-.\venv\Scripts\activate
+# Con venv (recomendado)
+python -m venv .venv_py313
+.\.venv_py313\Scripts\activate  # Windows
+source .venv_py313/bin/activate  # Linux/Mac
 
-# macOS/Linux
-python -m venv venv
-source venv/bin/activate
+# O con conda
+conda create -n ml_projects python=3.13
+conda activate ml_projects
 ```
 
-3. **Instalar dependencias**:
+### Paso 3: Instalar Dependencias
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Verificar instalación**:
-```bash
-pytest -v test_model.py
+### Contenido de requirements.txt
+```
+tensorflow>=2.16.0
+tensorflow-hub>=0.16.0
+keras>=3.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+jupyter>=1.0.0
+ipython>=8.10.0
 ```
 
 ---
 
-## 📖 Uso Detallado
+## 🚀 Ejecución
 
-### Entrenamiento Completo
-
-Ejecutar `run_training.py` realiza el flujo completo:
+### Ejecutar un Proyecto Individual
 
 ```bash
-python run_training.py
+# P0 - Predictor de Precios
+python proyecto0_original/aplicaciones/predictor_precios_casas.py
+
+# P1 - Predictor de Consumo
+python proyecto1_oscilaciones/aplicaciones/predictor_consumo_energia.py
+
+# P10 - Series Temporales
+python proyecto10_series/aplicaciones/predictor_series.py
+
+# P11 - Sentimientos
+python proyecto11_nlp/aplicaciones/clasificador_sentimientos.py
+
+# P12 - Generador de Imágenes
+python proyecto12_generador/aplicaciones/generador_imagenes.py
 ```
 
-**Qué hace el script**:
-1. ✅ Genera 1000 puntos de datos de entrenamiento
-2. ✅ Divide en 80% entrenamiento, 20% prueba
-3. ✅ Crea y compila el modelo
-4. ✅ Entrena durante 100 épocas
-5. ✅ Guarda el modelo en `.h5` y `.pkl`
-6. ✅ Genera gráficas de rendimiento
-7. ✅ Imprime métricas finales
-
-### Cargar Modelo Entrenado
-
-```python
-import numpy as np
-from modelo_cuadratico import ModeloCuadratico
-
-# Crear instancia vacía
-modelo = ModeloCuadratico()
-
-# Cargar modelo guardado
-modelo.cargar_modelo(path_tf="modelo_entrenado.h5")
-
-# Usar para predicciones
-x_prueba = np.array([[0.0], [0.5], [1.0], [1.5], [2.0]])
-y_pred = modelo.predecir(x_prueba)
-
-print("Predicciones:")
-for x, y in zip(x_prueba, y_pred):
-    print(f"  x={x[0]:6.2f}  →  y_pred={y[0]:8.4f}  (y_real={x[0]**2:8.4f})")
-```
-
-### Usar Notebook Jupyter
+### Ejecutar Validación Completa
 
 ```bash
+# Verificación rápida de integridad
+python verificar_integridad.py
+
+# Validación completa con ejecución
+python validar_todos_proyectos.py
+
+# Tests de nuevas aplicaciones
+python test_nuevas_aplicaciones.py
+```
+
+### Ejecutar Notebooks
+
+```bash
+# Tarea 1 - Red Neuronal para y=x²
 jupyter notebook tarea1_tensorflow.ipynb
-```
 
-El notebook contiene:
-- 📚 Explicaciones teóricas detalladas
-- 💻 Celdas de código ejecutables paso a paso
-- 📊 Visualizaciones integradas
-- 🔬 Análisis de resultados
+# O usar JupyterLab
+jupyter lab tarea1_tensorflow.ipynb
+```
 
 ---
 
-## 🧠 Arquitectura
-
-### Arquitectura del Modelo Base
+## 📁 Estructura de Directorios
 
 ```
-Entrada (1)
-    ↓
-Dense [64 neuronas] + ReLU
-    ↓
-Dense [64 neuronas] + ReLU
-    ↓
-Dense [1 neurona] + Linear
-    ↓
-Salida (1)
+tensorflow-aproximacion-cuadratica/
+│
+├── README.md                          # Este archivo
+├── DOCUMENTACION_PROYECTOS.md         # Guía completa de cada proyecto
+├── requirements.txt                   # Dependencias Python
+├── LICENSE                            # MIT License
+│
+├── 📂 PROYECTOS (13 directorios)
+│   ├── proyecto0_original/
+│   │   ├── teoría/
+│   │   ├── aplicaciones/
+│   │   │   └── predictor_precios_casas.py
+│   │   └── datos/
+│   │
+│   ├── proyecto1_oscilaciones/
+│   ├── proyecto2_web/
+│   ├── proyecto3_qubits/
+│   ├── proyecto4_estadistica/
+│   ├── proyecto5_clasificador/
+│   ├── proyecto6_funciones/
+│   ├── proyecto7_audio/
+│   ├── proyecto8_materiales/
+│   ├── proyecto9_imagenes/
+│   ├── proyecto10_series/        # NEW: Series Temporales LSTM
+│   ├── proyecto11_nlp/           # NEW: Sentimientos RNN
+│   └── proyecto12_generador/     # NEW: Autoencoder Imágenes
+│
+├── 📂 SCRIPTS DE VALIDACIÓN
+│   ├── verificar_integridad.py
+│   ├── validar_todos_proyectos.py
+│   └── test_nuevas_aplicaciones.py
+│
+├── 📂 NOTEBOOKS
+│   ├── tarea1_tensorflow.ipynb
+│   └── tarea1_tensorflow_limpio.ipynb
+│
+├── 📂 REPORTES
+│   └── reporte_pX.json (13 archivos)
+│
+├── 📂 outputs/
+│   ├── validacion/
+│   └── resultados/
+│
+├── 📂 docs/                        # Documentación técnica
+├── 📂 data/                        # Datasets
+├── 📂 modelos/                     # Modelos entrenados (.h5, .pb)
+└── 📂 tests/                       # Tests unitarios
 ```
 
-| Componente | Especificación |
-|-----------|----------------|
-| **Capas** | 4 (entrada implícita, 2 ocultas, 1 salida) |
-| **Parámetros** | 64 + 4096 + 65 = 4225 pesos + sesgos |
-| **Función de Activación Oculta** | ReLU (Rectified Linear Unit) |
-| **Función de Activación Salida** | Linear (sin restricciones) |
-| **Optimizador** | Adam con LR=0.001 |
-| **Función de Pérdida** | Mean Squared Error (MSE) |
+---
 
-### Hiperparámetros por Defecto
+## 📈 Resultados
 
-- **Epochs**: 100
-- **Batch Size**: 32
-- **Learning Rate**: 0.001
-- **Validation Split**: 0.2 (20% de datos)
-- **Early Stopping**: Paciencia de 10 épocas
+### Cobertura del Proyecto
+
+| Métrica | Valor |
+|---------|-------|
+| **Proyectos Completados** | 13/13 (100%) |
+| **Líneas de Código** | ~3,700 LOC |
+| **Nuevos Proyectos P10-P12** | 881 LOC |
+| **Modelos de Red Neuronal** | 13 arquitecturas distintas |
+| **Parámetros Totales** | ~2.5M parámetros |
+| **Tiempo Entrenamiento Total** | ~5-10 minutos (CPU) |
+
+### Métricas por Proyecto
+
+```
+P0  - Predictor Precios      | MAE: 0.25-0.35   | RMSE: 0.45-0.55
+P1  - Consumo Energía         | MAE: 0.20-0.30   | RMSE: 0.35-0.45
+P2  - Detector Fraude         | AUC: 0.95+       | F1-Score: 0.90+
+P3  - Diagnóstico             | Accuracy: 0.92+  | F1-Score: 0.90+
+P4  - Segmentador Clientes    | Silhouette: 0.60+| Davies-Bouldin: 1.5-
+P5  - Compresor Imágenes      | Ratio: 8:1       | MSE: <0.05
+P6  - Reconocedor Dígitos     | Accuracy: 0.98+  | Precision: 0.98+
+P7  - Clasificador Ruido      | Accuracy: 0.88+  | F1-Score: 0.87+
+P8  - Detector Objetos        | mAP: 0.85+       | Recall: 0.87+
+P9  - Segmentador Semántico   | IoU: 0.75+       | Dice: 0.85+
+P10 - Series Temporales       | MAE: 0.20-0.30   | RMSE: 0.40-0.50
+P11 - Sentimientos            | Accuracy: 1.00   | F1-Score: 1.00
+P12 - Generador Imágenes      | MSE: <0.10       | Parámetros: 85,857
+```
+
+---
+
+## 📚 Documentación
+
+### Archivos de Referencia
+
+- **DOCUMENTACION_PROYECTOS.md** - Explicación detallada de cada proyecto
+- **docs/GUIA_ARQUITECTURA.md** - Arquitectura general del sistema
+- **docs/TUTORIAL_TENSORFLOW.md** - Tutorial de TensorFlow y Keras
+- **VALIDACION_COMPLETA.md** - Resultados de validación
+
+### Notebooks Incluidos
+
+- `tarea1_tensorflow.ipynb` - Red neuronal básica para y=x² (MSE=0.0004)
+- `tarea1_tensorflow_limpio.ipynb` - Versión simplificada con explanations
 
 ---
 
 ## 🧪 Testing
 
-### Ejecutar Todos los Tests
+### Ejecutar Tests
 
 ```bash
-pytest -v
-```
+# Tests de proyectos individuales
+python -m pytest tests/ -v
 
-### Ejecutar Tests Específicos
+# Tests con cobertura
+python -m pytest tests/ --cov=.
 
-```bash
-# Solo tests del modelo base
-pytest test_model.py -v
-
-# Solo tests del modelo mejorado
-pytest test_modelos_exhaustivo.py::TestModeloCuadraticoMejorado -v
-
-# Tests de integración
-pytest test_modelos_exhaustivo.py::TestIntegracion -v
-
-# Con reporte de cobertura
-pytest --cov=. --cov-report=html
-```
-
-### Suite de Tests Disponibles
-
-**test_model.py** (20+ tests):
-- ✅ Inicialización del modelo
-- ✅ Generación de datos
-- ✅ Construcción de arquitectura
-- ✅ Entrenamiento convergencia
-- ✅ Predicciones
-- ✅ Guardado/Carga
-- ✅ Manejo de errores
-
-**test_modelos_exhaustivo.py** (50+ tests):
-- ✅ Todos los tests anteriores
-- ✅ Validación cruzada
-- ✅ Visualización
-- ✅ Exportación de reportes
-- ✅ Rendimiento con grandes datasets
-- ✅ Casos extremos
-
----
-
-## 📊 Resultados y Métricas
-
-### Métricas de Evaluación
-
-El modelo mejorado proporciona:
-
-| Métrica | Descripción | Rango Ideal |
-|---------|------------|-----------|
-| **MSE** | Error Cuadrático Medio | < 0.01 |
-| **RMSE** | Raíz del Error Cuadrático Medio | < 0.1 |
-| **MAE** | Error Absoluto Medio | < 0.1 |
-| **R²** | Coeficiente de Determinación | > 0.99 |
-
-### Resultados Típicos
-
-Después de entrenar con 1000 muestras durante 100 épocas:
-
-```
-Métricas Base:
-  MSE: 0.000234
-  RMSE: 0.0153
-  MAE: 0.0108
-  R²: 0.9998
-
-Validación Cruzada (5-fold):
-  MSE Promedio: 0.000267 ± 0.000045
-  RMSE Promedio: 0.0164 ± 0.0014
-  MAE Promedio: 0.0121 ± 0.0009
-  R² Promedio: 0.9997 ± 0.0001
-```
-
-### Interpretación
-
-- **R² cercano a 1.0**: El modelo explica el 99.98% de la varianza
-- **RMSE bajo**: Los errores de predicción son pequeños (~0.015 unidades)
-- **CV consistente**: Los resultados son estables entre diferentes splits de datos
-
----
-
-## 🔄 Workflow Típico
-
-```
-┌─────────────────────────────────────────┐
-│ 1. Generar Datos                        │
-│    - 1000 puntos de (x, x²) + ruido    │
-└──────────────┬──────────────────────────┘
-               ↓
-┌─────────────────────────────────────────┐
-│ 2. Dividir Datos                        │
-│    - 80% entrenamiento, 20% test       │
-└──────────────┬──────────────────────────┘
-               ↓
-┌─────────────────────────────────────────┐
-│ 3. Construir Modelo                     │
-│    - Arquitectura 1-64-64-1             │
-└──────────────┬──────────────────────────┘
-               ↓
-┌─────────────────────────────────────────┐
-│ 4. Entrenar                             │
-│    - 100 épocas, batch_size=32         │
-└──────────────┬──────────────────────────┘
-               ↓
-┌─────────────────────────────────────────┐
-│ 5. Evaluar                              │
-│    - Calcular MSE, RMSE, MAE, R²       │
-│    - Validación cruzada 5-fold         │
-└──────────────┬──────────────────────────┘
-               ↓
-┌─────────────────────────────────────────┐
-│ 6. Visualizar y Exportar                │
-│    - Gráficas                          │
-│    - Reporte JSON                      │
-└──────────────┬──────────────────────────┘
-               ↓
-┌─────────────────────────────────────────┐
-│ 7. Guardar Modelo                       │
-│    - Formatos .h5 y .pkl               │
-└─────────────────────────────────────────┘
+# Tests específicos
+python -m pytest tests/test_p0_precio.py -v
 ```
 
 ---
 
-## 📚 Dependencias
+## 🤝 Contribución
 
-Ver `requirements.txt` completo:
+Para contribuir al proyecto:
 
-```
-tensorflow>=2.16.0        # Framework principal
-numpy>=1.24.0            # Computación numérica
-scikit-learn>=1.3.0      # ML utilities y cross-validation
-matplotlib>=3.7.0        # Visualización
-pytest>=7.4.0            # Testing
-pytest-cov>=4.1.0        # Cobertura de tests
-```
-
-**Instalación alternativa** (versiones específicas):
-```bash
-pip install tensorflow==2.16.0 numpy==1.24.0 scikit-learn==1.3.0 matplotlib==3.7.0 pytest==7.4.0 pytest-cov==4.1.0
-```
+1. Fork el repositorio
+2. Crea una rama (`git checkout -b feature/mejora`)
+3. Commit cambios (`git commit -am 'Add mejora'`)
+4. Push a la rama (`git push origin feature/mejora`)
+5. Abre Pull Request
 
 ---
 
-## 📞 Soporte y Documentación
+## 📄 Licencia
 
-### Preguntas Frecuentes
-
-**P: ¿Cuál modelo debo usar?**
-- **Modelo Base**: Prototipado rápido, producción simple
-- **Modelo Mejorado**: Análisis profundo, investigación, validación rigurosa
-
-**P: ¿Cómo ajustar el ruido en los datos?**
-```python
-X_train, X_test, y_train, y_test = modelo.generar_datos(ruido=0.1)  # 10% de ruido
-```
-
-**P: ¿Puedo cambiar la arquitectura?**
-```python
-modelo.construir_modelo(capas=[1, 128, 256, 128, 1])  # 4 capas ocultas
-```
-
-**P: ¿Cómo entrenar más épocas?**
-```python
-modelo.entrenar(epochs=500)  # 500 épocas
-```
+Este proyecto está bajo licencia MIT. Ver archivo `LICENSE` para detalles.
 
 ---
 
-## 📝 Licencia
+## 📧 Contacto
 
-Este proyecto está distribuido bajo la **Licencia MIT**.
-
-```
-MIT License
-
-Copyright (c) 2025 Aproximación Cuadrática con TensorFlow
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction...
-```
-
-Consulta el archivo `LICENSE` para más detalles.
+**Autor**: Omar Merino  
+**Email**: omardmerinoo@gmail.com  
+**GitHub**: [omardmerinoo-commits](https://github.com/omardmerinoo-commits)  
+**Repositorio**: [tensorflow-aproximacion-cuadratica](https://github.com/omardmerinoo-commits/tensorflow-aproximacion-cuadratica)
 
 ---
 
-## 📌 Referencias
+## 🎓 Recursos Educativos
 
-- [TensorFlow Documentation](https://www.tensorflow.org/)
-- [Keras API Guide](https://keras.io/)
+### Documentación Oficial
+- [TensorFlow Official](https://www.tensorflow.org/)
+- [Keras API](https://keras.io/)
 - [NumPy Documentation](https://numpy.org/doc/)
-- [Scikit-learn Cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html)
-- [Matplotlib Tutorials](https://matplotlib.org/stable/tutorials/index.html)
+- [Scikit-learn](https://scikit-learn.org/)
+
+### Tutoriales Recomendados
+- Deep Learning Specialization (Andrew Ng)
+- Fast.ai - Practical Deep Learning
+- CS231n - Convolutional Neural Networks for Visual Recognition
+- Stanford CS224N - NLP with Deep Learning
 
 ---
 
-**Última actualización**: Noviembre 2025 | **Mantenedor**: Usuario | **Estado**: ✅ Activo
+## ✨ Características Principales
+
+✅ **13 Proyectos Completos** - Cobertura total de ML/DL  
+✅ **Código Reproducible** - Seeds fijos para consistencia  
+✅ **Documentación Exhaustiva** - Explicaciones detalladas  
+✅ **Reportes JSON** - Métricas de cada ejecución  
+✅ **Validación Automática** - Scripts de testing  
+✅ **Arquitectura Consistente** - Patrón estándar en todos  
+✅ **Ejemplos Ejecutables** - Código listo para correr  
+✅ **Notebooks Incluidos** - Tarea 1 con explicaciones  
+
+---
+
+## 🚧 Hoja de Ruta Futura
+
+- [ ] API REST con FastAPI
+- [ ] Dashboard de visualización
+- [ ] Containerización Docker
+- [ ] CI/CD Pipeline (GitHub Actions)
+- [ ] Modelos pre-entrenados descargables
+- [ ] Benchmarks de performance
+- [ ] Integración con Weights & Biases
+- [ ] Deploy en Google Cloud / AWS
+
+---
+
+**Última actualización**: 19 de Noviembre de 2025  
+**Estado**: ✅ COMPLETADO Y VALIDADO
